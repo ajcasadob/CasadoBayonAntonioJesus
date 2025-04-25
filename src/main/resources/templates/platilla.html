@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content bg-light">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Creación de cuenta</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form action="" class="mt-0">
+
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="mb-1 col-12 col-md-5">
+                                <label for="name" class="form-label">Nombre:</label>
+                                <input type="text" class="form-control p-2" required id="name" name="name">
+                            </div>
+
+                            <div class="mb-1 col-12 col-md-7">
+                                <label for="surname" class="form-label">Apellidos:</label>
+                                <input type="text" class="form-control p-2" id="surname" required name="surname">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-1 col-12 col-md-8">
+                                <label for="home" class="form-label">Domicilio:</label>
+                                <input type="text" class="form-control p-2" id="home" required placeholder="Nº XXX C/ XXX"
+                                       name="home">
+                            </div>
+
+                            <div class="mb-1 col-12 col-md-4">
+                                <label for="city" class="form-label">Localidad:</label>
+                                <input type="text" class="form-control p-2" id="city" name="city">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-1 col-12">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" class="form-control p-2" required id="email" placeholder="correo@email.com"
+                                       name="email">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-1 col-12 col-md-6">
+                                <label for="pwd" class="form-label">Contraseña:</label>
+                                <input type="password" class="form-control p-2" id="pwd" required placeholder="************"
+                                       name="pswd">
+                            </div>
+
+                            <div class="mb-1 col-12 col-md-6">
+                                <label for="pwd2" class="form-label">Repetir contraseña:</label>
+                                <input type="password" class="form-control p-2" id="pwd2" required placeholder="************"
+                                       name="pswd2">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="form-label">Sexo:</label>
+
+                            <div class="form-check mb-1 col-12 col-md-3">
+                                <label class="form-check-label" for="hombre">
+                                    <input class="form-check-input" id="hombre" type="radio" name="sex" value="H">
+                                    Hombre
+                                </label>
+                            </div>
+
+                            <div class="form-check mb-1 col-12 col-md-3">
+                                <label class="form-check-label" for="mujer">
+                                    <input class="form-check-input" type="radio" id="mujer" name="sex" value="M">
+                                    Mujer
+                                </label>
+                            </div>
+
+                            <div class="form-check mb-1 col-12 col-md-5">
+                                <label class="form-check-label" for="noindicado">
+                                    <input class="form-check-input" type="radio" id="noindicado" name="sex" value="N"> No especificado
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="my-1">
+                                <label for="comment">Observaciones:</label>
+                                <textarea class="form-control" rows="2" id="comment" name="text"
+                                          placeholder="Escriba aquí..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="reset" class=" btn btn-primary ">Limpiar
+                                    formulario</button>
+                            </div>
+
+                            <div class="col-6">
+                                <button type=" submit" class=" btn btn-primary " data-bs-dismiss="modal">Crear cuenta</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+

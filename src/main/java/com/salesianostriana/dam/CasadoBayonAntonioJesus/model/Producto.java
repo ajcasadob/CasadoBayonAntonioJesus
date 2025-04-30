@@ -27,6 +27,7 @@ public class Producto {
     private TipoProducto tipoProducto;
 
     private int popularidad;
+    private String url;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate fecha;

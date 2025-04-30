@@ -4,6 +4,7 @@ package com.salesianostriana.dam.CasadoBayonAntonioJesus.controller;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.model.Producto;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.service.ProductoService;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,12 +13,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ProductoController {
-
+    @Autowired
     private final ProductoService productoService;
 
     public ProductoController(ProductoService productoService){
         this.productoService=productoService;
     }
+    @GetMapping("/")
+    public String verWeb  (){
+
+        return "CasadoBayonAntonioJesus";
+    }
+    /*
     @GetMapping("/formulario")
     public String  verFormulario(Model model){
 
@@ -36,4 +43,6 @@ public class ProductoController {
 
         return "CasadoBayonAntonioJesus";
     }
+
+     */
 }

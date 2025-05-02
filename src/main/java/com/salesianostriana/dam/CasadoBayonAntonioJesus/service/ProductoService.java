@@ -15,21 +15,30 @@ public class ProductoService {
     @Autowired
     private ProductoRepository productoRepository;
 
+    public List<Producto> buscarPorNombre (String nombre){
 
-
-    public List<Producto> getAll (){
-
-        return productoRepository.findAll().stream().toList();
+        return productoRepository.findAll().stream().filter(p -> p.getNombre().equalsIgnoreCase(nombre)).toList();
     }
 
-    public void deleteProduct(Producto p){
-
-        productoRepository.delete(p);
+    public List<Producto> getAll() {
+        return productoRepository.findAllWithCarta(); // Usa la consulta con JOIN FETCH
     }
 
-    public Producto findById(int  id){
-
-        return null ;
+    public void deleteProduct(String nombre){
+    List<Producto> productoEliminar = buscarPorNombre(nombre);
+        productoRepository.deleteAll(productoEliminar);
     }
+
+    public Producto findById(Long id) {
+        return productoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Producto no encontrado con ID: " + id));
+    }
+
+    public void savedProduct (Producto producto){
+
+        productoRepository.save(producto);
+    }
+
+
 
 }

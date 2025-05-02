@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class CartaController {
+
+
     @Autowired
     private final CartaService cartaService;
 

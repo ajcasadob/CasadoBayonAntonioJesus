@@ -20,9 +20,7 @@ public class ProductoService {
         return productoRepository.findAll().stream().filter(p -> p.getNombre().equalsIgnoreCase(nombre)).toList();
     }
 
-    public List<Producto> getAll() {
-        return productoRepository.findAllWithCarta(); // Usa la consulta con JOIN FETCH
-    }
+   
 
     public void deleteProduct(String nombre){
     List<Producto> productoEliminar = buscarPorNombre(nombre);

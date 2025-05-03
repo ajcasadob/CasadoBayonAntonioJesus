@@ -19,42 +19,26 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class ProductoController {
 
-    private final ProductoService productoService;
-    private final CartaService  cartaService;
-
     @Autowired
-    public ProductoController(ProductoService productoService, CartaService cartaService){
-        this.productoService=productoService;
-        this.cartaService=cartaService;
-    }
+    private  ProductoService productoService;
+
+
+
+
+
+
     @GetMapping("/")
-    public String verWeb(Model model) {
-        model.addAttribute("productoForm", new Producto());
-        model.addAttribute("tiposProducto", TipoProducto.values());
-        model.addAttribute("cartasDisponibles", cartaService.findAllCartas()); // Si vas a seleccionar Carta
+    public String inicio(){
+
         return "CasadoBayonAntonioJesus";
     }
 
-    @PostMapping("/agregarProducto")
-    public String agregarProducto(
-            @ModelAttribute("productoForm") Producto producto,
-            @RequestParam("idCarta") Long idCarta, // Cambiado a idCarta
-            RedirectAttributes redirectAttributes
-    ) {
 
+    @GetMapping("/menu")
+    public String menu (){
 
-        // Si manejas la relación con Carta
-        Carta carta = cartaService.findById(idCarta);
-        producto.setCarta(carta);
-        productoService.savedProduct(producto);
-
-        productoService.savedProduct(producto);
-        redirectAttributes.addFlashAttribute("exito", "¡Producto agregado correctamente!");
-        return "redirect:/";
+        return "CasadoBayonAntonioJesus";
     }
-
-
-
 
 
 }

@@ -5,16 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Magic´s burger</title>
-  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet"  th:href="@{/css/bootstrap.min.css}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"></script>
 
 
-  <style >
+  <style>
     body {
       
-      background-image: url('../static/img/pattern.jpg');
+      background-image: url([[@{/img/pattern.jpg}]]);
       background-repeat: repeat;
       background-size: auto;
 
@@ -34,8 +34,8 @@
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-0">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="../static/img/magic.jpg" width="60px" height="60px" alt="Magic burguers" class="rounded-circle">
+        <a  class="navbar-brand">
+          <img src="https://i.postimg.cc/WzQmp01V/magic.jpg" width="60px" height="60px" alt="Magic burguers" class="rounded-circle">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -50,7 +50,7 @@
                 Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#menu"><img src="../static/img/one-hamburguer-svgrepo-com(1).svg"
+              <a class="nav-link text-white" href="#menu"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}"
                   alt="Descripción del SVG" class="pb-1" width="16px"> Menú</a>
             </li>
             <li class="nav-item">
@@ -62,10 +62,6 @@
             <li class="nav-item">
               <a class="nav-link text-white" href="#login" data-bs-toggle="modal" data-bs-target="#loginModal"><i
                   class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#agregar" data-bs-toggle="modal" data-bs-target="#loginModal"><i
-                  class="bi bi-box-arrow-in-right"></i> Agregar </a>
             </li>
           </ul>
         </div>
@@ -89,7 +85,7 @@
                 <h5 class="card-title">¡Nueva Hamburguesa Ganadora!</h5>
                 <p class="card-text justify-self-top">Presentamos nuestra nueva creación galardonada: "La Mágica
                   Deluxe".</p>
-                <img src="../static/img/burguer8.jpeg" class="img-fluid rounded" alt="Nueva hamburguesa">
+                <img src="" class="img-fluid rounded" alt="Nueva hamburguesa">
               </div>
             </div>
 
@@ -99,7 +95,7 @@
                 <h5 class="card-title">Parrilla</h5>
                 <p class="card-text">Como ultima novedad, hemos incorporado las parrillas, para darle este toque a brasa
                   autentico.</p>
-                <img src="../static/img/brasas.jpeg" class="img-fluid rounded" alt="Local">
+                <img src="" class="img-fluid rounded" alt="Local">
               </div>
 
             </div>
@@ -141,16 +137,16 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col-6 mb-3">
-              <img src="../static/img/burguer1.PNG" class="img-fluid rounded" alt="Equipo">
+              <img src="" class="img-fluid rounded" alt="Equipo">
             </div>
             <div class="col-6 mb-3">
-              <img src="../static/img/burguer2.PNG" class="img-fluid rounded" alt="Local">
+              <img src="" class="img-fluid rounded" alt="Local">
             </div>
             <div class="col-6">
-              <img src="../static/img/burguer3.PNG" class="img-fluid rounded" alt="Ingredientes">
+              <img src="" class="img-fluid rounded" alt="Ingredientes">
             </div>
             <div class="col-6">
-              <img src="../static/img/burger4.jpeg" class="img-fluid rounded" alt="Preparación">
+              <img src="" class="img-fluid rounded" alt="Preparación">
             </div>
           </div>
         </div>
@@ -168,7 +164,7 @@
       <div class="row">
         <div class="col-md-4 mb-4">
           <div class="card h-100">
-            <img src="../static/img/burguer5.jpeg" class="card-img-top" alt="Noticia 1">
+            <img src="" class="card-img-top" alt="Noticia 1">
             <div class="card-body">
               <h5 class="card-title">Premio a la Mejor Burger 2024</h5>
               <p class="card-text">Nuestra hamburguesa "Tifa" ha sido galardonada como la mejor hamburguesa artesanal de
@@ -178,7 +174,7 @@
         </div>
         <div class="col-md-4 mb-4">
           <div class="card h-100">
-            <img src="../static/img/burguer7.jpeg" class="card-img-top" alt="Noticia 2">
+            <img src="" class="card-img-top" alt="Noticia 2">
             <div class="card-body">
               <h5 class="card-title">Nuevas Opciones Veganas</h5>
               <p class="card-text">Ampliamos nuestro menú con 3 nuevas opciones veganas para satisfacer a todos nuestros
@@ -188,7 +184,7 @@
         </div>
         <div class="col-md-4 mb-4">
           <div class="card h-100">
-            <img src="../static/img/corte.png" class="card-img-top" alt="Noticia 3">
+            <img src="" class="card-img-top" alt="Noticia 3">
             <div class="card-body">
               <h5 class="card-title">Noche de Hamburguesas Especiales</h5>
               <p class="card-text">Todos los jueves por la noche ofrecemos creaciones especiales del chef a precio
@@ -206,7 +202,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="d-flex justify-content-center">
-              <img src="../static/img/burguer1.PNG" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 1">
+              <img src="" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 1">
             </div>
             <div class="carousel-caption d-none d-sm-block bg-black bg-opacity-50 rounded py-2 w-50 my-0 mx-auto">
               <h5 class="mb-1">Hamburguesa Clásica</h5>
@@ -215,7 +211,7 @@
           </div>
           <div class="carousel-item">
             <div class="d-flex justify-content-center">
-              <img src="../static/img/burguer2.PNG" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 2">
+              <img src="" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 2">
             </div>
             <div class="carousel-caption d-none d-sm-block bg-black bg-opacity-50 rounded py-2 w-50 my-0 mx-auto">
               <h5 class="mb-1">Hamburguesa BBQ</h5>
@@ -224,7 +220,7 @@
           </div>
           <div class="carousel-item">
             <div class="d-flex justify-content-center">
-              <img src="../static/img/burguer3.PNG" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 3">
+              <img src="" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 3">
             </div>
             <div class="carousel-caption d-none d-sm-block bg-black bg-opacity-50 rounded py-2 w-50 my-0 mx-auto">
               <h5 class="mb-1">Hamburguesa Veggie</h5>
@@ -233,7 +229,7 @@
           </div>
           <div class="carousel-item">
             <div class="d-flex justify-content-center">
-              <img src="../static/img/burger4.jpeg" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 4">
+              <img src="" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 4">
             </div>
             <div class="carousel-caption d-none d-sm-block bg-black bg-opacity-50 rounded py-2 w-50 my-0 mx-auto">
               <h5 class="mb-1">Street Burger</h5>
@@ -242,7 +238,7 @@
           </div>
           <div class="carousel-item">
             <div class="d-flex justify-content-center">
-              <img src="../static/img/burguer5.jpeg" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 5">
+              <img src="" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 5">
             </div>
             <div class="carousel-caption d-none d-sm-block bg-black bg-opacity-50 rounded py-2 w-50 my-0 mx-auto">
               <h5 class="mb-1">Tifa</h5>
@@ -251,7 +247,7 @@
           </div>
           <div class="carousel-item">
             <div class="d-flex justify-content-center">
-              <img src="../static/img/burger6.jpeg" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 6">
+              <img src="" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 6">
             </div>
             <div class="carousel-caption d-none d-sm-block bg-black bg-opacity-50 rounded py-2 w-50 my-0 mx-auto">
               <h5 class="mb-1">Dulce Iniesta</h5>
@@ -260,7 +256,7 @@
           </div>
           <div class="carousel-item">
             <div class="d-flex justify-content-center">
-              <img src="../static/img/burguer7.jpeg" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 7">
+              <img src="" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 7">
             </div>
             <div class="carousel-caption d-none d-sm-block bg-black bg-opacity-50 rounded py-2 w-50 my-0 mx-auto">
               <h5 class="mb-1">Kika</h5>
@@ -269,7 +265,7 @@
           </div>
           <div class="carousel-item">
             <div class="d-flex justify-content-center">
-              <img src="../static/img/burguer8.jpeg" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 8">
+              <img src="" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 8">
             </div>
             <div class="carousel-caption d-none d-sm-block bg-black bg-opacity-50 rounded py-2 w-50 my-0 mx-auto">
               <h5 class="mb-1">Winner 2023</h5>
@@ -278,7 +274,7 @@
           </div>
           <div class="carousel-item">
             <div class="d-flex justify-content-center">
-              <img src="../static/img/burguer9.jpeg" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 9">
+              <img src="" class="d-block img-fluid rounded-2 w-75 w-md-50" alt="Hamburguesa 9">
             </div>
             <div class="carousel-caption d-none d-sm-block bg-black bg-opacity-50 rounded py-2 w-50 my-0 mx-auto">
               <h5 class="mb-1">Alpha</h5>
@@ -302,110 +298,7 @@
 
 
     <!-- Catálogo con tarjetas -->
-    <section id="menu" class="container py-5">
-      <h2 class="text-center">Menú</h2>
-      <div class="row text-center">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../static/img/burguer1.PNG" class="card-img-top" alt="Hamburguesa clásica">
-            <div class="card-body">
-              <h5 class="card-title">Provocacion</h5>
-              <p class="card-text">La provocación de la salsa de lotus</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descripcionModal1">Ver
-                Descripción</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../static/img/burguer2.PNG" class="card-img-top" alt="Hamburguesa BBQ">
-            <div class="card-body">
-              <h5 class="card-title">Donald</h5>
-              <p class="card-text">Medallón de foie de pato..</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descripcionModal2">Ver
-                Descripción</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../static/img/burguer3.PNG" class="card-img-top" alt="Hamburguesa Veggie">
-            <div class="card-body">
-              <h5 class="card-title">Payoya</h5>
-              <p class="card-text">Para los amantes del queso payoyo..</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descripcionModal3">Ver
-                Descripción</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../static/img/burger4.jpeg" class="card-img-top" alt="Hamburguesa Veggie">
-            <div class="card-body">
-              <h5 class="card-title">Street burger</h5>
-              <p class="card-text">¿ Te atreves con dos carnes?</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descripcionModal4">Ver
-                Descripción</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../static/img/burguer5.jpeg" class="card-img-top" alt="Hamburguesa Veggie">
-            <div class="card-body">
-              <h5 class="card-title">Tifa</h5>
-              <p class="card-text">La cecina te quitara el sentido</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descripcionModal5">Ver
-                Descripción</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../static/img/burger6.jpeg" class="card-img-top" alt="Hamburguesa Veggie">
-            <div class="card-body">
-              <h5 class="card-title">Dulce iniesta</h5>
-              <p class="card-text">¿ Unas palomitas en la burger ?</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descripcionModal6">Ver
-                Descripción</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../static/img/burguer7.jpeg" class="card-img-top" alt="Hamburguesa Veggie">
-            <div class="card-body">
-              <h5 class="card-title">Kika</h5>
-              <p class="card-text">Tambien pensamos en los veganos :&rpar;</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descripcionModal7">Ver
-                Descripción</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../static/img/burguer8.jpeg" class="card-img-top" alt="Hamburguesa Veggie">
-            <div class="card-body">
-              <h5 class="card-title">Winner 2023</h5>
-              <p class="card-text">La ganadora del campeonato, te llevara a otra dimensión</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descripcionModal8">Ver
-                Descripción</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../static/img/burguer9.jpeg" class="card-img-top" alt="Hamburguesa Veggie">
-            <div class="card-body">
-              <h5 class="card-title">Alpha</h5>
-              <p class="card-text">¿Te atreves con algo dulce y a la vez salado?</p>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#descripcionModal9">Ver
-                Descripción</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section th:replace="~{menu :: catalogo}"></section>
 
     <!-- Modales para las descripciones de las hamburguesas -->
     <!-- Modal 1 - Provocacion -->
@@ -418,7 +311,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="../static/img/burguer1.PNG" class="img-fluid mb-3" alt="Provocacion">
+            <img src="" class="img-fluid mb-3" alt="Provocacion">
             <p>Una hamburguesa que te tentará con su irresistible salsa de lotus. Ingredientes:</p>
             <ul>
               <li>Carne de ternera gallega 200g</li>
@@ -446,7 +339,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="../static/img/burguer2.PNG" class="img-fluid mb-3" alt="Donald">
+            <img src="" class="img-fluid mb-3" alt="Donald">
             <p>Una delicia para los paladares más exigentes con foie de pato. Ingredientes:</p>
             <ul>
               <li>Carne de ternera gallega 200g</li>
@@ -474,7 +367,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="../static/img/burguer3.PNG" class="img-fluid mb-3" alt="Payoya">
+            <img src="" class="img-fluid mb-3" alt="Payoya">
             <p>El sabor único del queso payoyo en una hamburguesa. Ingredientes:</p>
             <ul>
               <li>Carne de ternera gallega 200g</li>
@@ -502,7 +395,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="../static/img/burger4.jpeg" class="img-fluid mb-3" alt="Street burger">
+            <img src="" class="img-fluid mb-3" alt="Street burger">
             <p>Doble dosis de sabor para los más hambrientos. Ingredientes:</p>
             <ul>
               <li>Doble carne de ternera gallega (2x150g)</li>
@@ -530,7 +423,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="../static/img/burguer5.jpeg" class="img-fluid mb-3" alt="Tifa">
+            <img src="" class="img-fluid mb-3" alt="Tifa">
             <p>La cecina te transportará a otro nivel de sabor. Ingredientes:</p>
             <ul>
               <li>Carne de ternera gallega 200g</li>
@@ -558,7 +451,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="../static/img/burger6.jpeg" class="img-fluid mb-3" alt="Dulce iniesta">
+            <img src="" class="img-fluid mb-3" alt="Dulce iniesta">
             <p>Una combinación sorprendente de sabores dulces y salados. Ingredientes:</p>
             <ul>
               <li>Carne de ternera gallega 200g</li>
@@ -586,7 +479,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="../static/img/burguer7.jpeg" class="img-fluid mb-3" alt="Kika">
+            <img src="" class="img-fluid mb-3" alt="Kika">
             <p>Nuestra opción vegana más popular. Ingredientes:</p>
             <ul>
               <li>Hamburguesa de garbanzos y espinacas</li>
@@ -615,7 +508,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="../static/img/burguer8.jpeg" class="img-fluid mb-3" alt="Winner 2023">
+            <img src="" class="img-fluid mb-3" alt="Winner 2023">
             <p>La hamburguesa ganadora del campeonato 2023. Ingredientes:</p>
             <ul>
               <li>Carne de tenera madurada 200g</li>
@@ -644,7 +537,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="../static/img/burguer9.jpeg" class="img-fluid mb-3" alt="Alpha">
+            <img src="" class="img-fluid mb-3" alt="Alpha">
             <p>El equilibrio perfecto entre dulce y salado. Ingredientes:</p>
             <ul>
               <li>Carne de ternera gallega 200g</li>
@@ -738,7 +631,6 @@
           <div class="modal-header">
             <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            
           </div>
           <div class="modal-body">
             <form method="#" action="#">
@@ -752,7 +644,7 @@
               </div>
               <button type="submit" class="btn btn-primary">Iniciar sesión</button>
               <button class=" btn btn-primary " type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-                Agregar
+                Crear cuenta
               </button>
             </form>
           </div>
@@ -762,77 +654,107 @@
     <div class="modal fade" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content bg-light">
+
           <div class="modal-header">
-            <h4 class="modal-title">Añadir nueva hamburguesa</h4>
+            <h4 class="modal-title">Creación de cuenta</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
 
           <div class="modal-body">
-            <!-- Mensaje de éxito -->
-            <div th:if="${exito}" class="alert alert-success" th:text="${exito}"></div>
 
-            <form th:action="@{/agregarProducto}" method="post" th:object="${productoForm}">
-              <!-- Campo Oculto para Carta (si no usas selección) -->
-              <input type="hidden" th:field="*{carta}" th:value="1"> <!-- Ejemplo con ID fijo -->
+            <form action="#" method="#" class="mt-0">
 
-              <div class="row">
-                <div class="mb-3 col-md-6">
-                  <label>Nombre:</label>
-                  <input type="text" class="form-control" th:field="*{nombre}" required>
+              <div class="container-fluid">
+
+                <div class="row">
+                  <div class="mb-1 col-12 col-md-5">
+                    <label for="name" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control p-2" required id="name" name="name">
+                  </div>
+
+                  <div class="mb-1 col-12 col-md-7">
+                    <label for="surname" class="form-label">Apellidos:</label>
+                    <input type="text" class="form-control p-2" id="surname" required name="surname">
+                  </div>
                 </div>
 
-                <div class="mb-3 col-md-6">
-                  <label>Precio (€):</label>
-                  <input type="number" class="form-control" th:field="*{precio}" step="0.01" required>
-                </div>
-              </div>
+                <div class="row">
+                  <div class="mb-1 col-12 col-md-8">
+                    <label for="home" class="form-label">Domicilio:</label>
+                    <input type="text" class="form-control p-2" id="home" required placeholder="Nº XXX C/ XXX"
+                      name="home">
+                  </div>
 
-              <div class="row">
-                <div class="mb-3 col-md-6">
-                  <label>Popularidad (1-5):</label>
-                  <input type="number" class="form-control" th:field="*{popularidad}" min="1" max="5" required>
-                </div>
-
-                <div class="mb-3 col-md-6">
-                  <label>Fecha:</label>
-                  <input type="date" class="form-control" th:field="*{fecha}" required>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label>Descripción:</label>
-                <textarea class="form-control" th:field="*{descripcion}" rows="3" required></textarea>
-              </div>
-
-              <div class="row">
-                <div class="mb-3 col-md-6">
-                  <label>Tipo de Producto:</label>
-                  <select class="form-select" th:field="*{tipoProducto}" required>
-                    <option value="">Seleccione tipo</option>
-                    <option th:each="tipo : ${tiposProducto}"
-                            th:value="${tipo}"
-                            th:text="${tipo}"></option>
-                  </select>
+                  <div class="mb-1 col-12 col-md-4">
+                    <label for="city" class="form-label">Localidad:</label>
+                    <input type="text" class="form-control p-2" id="city" name="city">
+                  </div>
                 </div>
 
-                <div class="mb-3 col-md-6">
-                  <label>URL de la Imagen:</label>
-                  <input type="url" class="form-control" th:field="*{url}" placeholder="https://ejemplo.com/imagen.jpg">
+                <div class="row">
+                  <div class="mb-1 col-12">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control p-2" required id="email" placeholder="correo@email.com"
+                      name="email">
+                  </div>
                 </div>
-              </div>
 
-              <!-- Si manejas la relación con Carta -->
-              <div class="mb-3" th:if="${cartasDisponibles}">
-                <label>Carta:</label>
-                <select class="form-select" th:field="*{carta}">
-                  <option th:each="carta : ${cartasDisponibles}"
-                          th:value="${carta.idCarta}"
-                          th:text="${carta.nombre}"></option>
-                </select>
-              </div>
+                <div class="row">
+                  <div class="mb-1 col-12 col-md-6">
+                    <label for="pwd" class="form-label">Contraseña:</label>
+                    <input type="password" class="form-control p-2" id="pwd" required placeholder="************"
+                      name="pswd">
+                  </div>
 
-              <div class="mt-3 text-end">
-                <button type="submit" class="btn btn-primary">Agregar Producto</button>
+                  <div class="mb-1 col-12 col-md-6">
+                    <label for="pwd2" class="form-label">Repetir contraseña:</label>
+                    <input type="password" class="form-control p-2" id="pwd2" required placeholder="************"
+                      name="pswd2">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label class="form-label">Sexo:</label>
+
+                  <div class="form-check mb-1 col-12 col-md-3">
+                    <label class="form-check-label" for="hombre">
+                      <input class="form-check-input" id="hombre" type="radio" name="sex" value="H">
+                      Hombre
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-1 col-12 col-md-3">
+                    <label class="form-check-label" for="mujer">
+                      <input class="form-check-input" type="radio" id="mujer" name="sex" value="M">
+                      Mujer
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-1 col-12 col-md-5">
+                    <label class="form-check-label" for="noindicado">
+                      <input class="form-check-input" type="radio" id="noindicado" name="sex" value="N"> No especificado
+                    </label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="my-1">
+                    <label for="comment">Observaciones:</label>
+                    <textarea class="form-control" rows="2" id="comment" name="text"
+                      placeholder="Escriba aquí..."></textarea>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <button type="reset" class=" btn btn-primary ">Limpiar
+                      formulario</button>
+                  </div>
+
+                  <div class="col-6">
+                    <button type=" submit" class=" btn btn-primary " data-bs-dismiss="modal">Crear cuenta</button>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
@@ -862,33 +784,8 @@
     </section>
 
 
-    <footer class=" text-white py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h5>Sobre Nosotros</h5>
-            <p>Somos una hamburguesería con pasión por el buen comer, ofreciendo productos frescos y deliciosos.</p>
-          </div>
-          <div class="col-md-4">
-            <h5>Enlaces Rápidos</h5>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-house-door"></i> <a href="#home" class="text-white">Inicio</a></li>
-              <li><img src="../static/img/one-hamburguer-svgrepo-com(1).svg" alt="Descripción del SVG" class="pb-1" width="16px">
-                <a href="#menu" class="text-white">Menú</a>
-              </li>
-              <li><i class="bi bi-telephone-inbound"></i> <a href="#contacto" class="text-white">Contacto</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h5>Redes Sociales</h5>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-facebook"></i> <a href="#" class="text-white">Facebook</a></li>
-              <li><i class="bi bi-instagram"></i> <a href="#" class="text-white">Instagram</a></li>
-              <li><i class="bi bi-twitter-x"></i> <a href="#" class="text-white">Twitter</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <footer th:replace="~{footer :: pie}" class=" text-white py-5">
+     
     </footer>
 
 

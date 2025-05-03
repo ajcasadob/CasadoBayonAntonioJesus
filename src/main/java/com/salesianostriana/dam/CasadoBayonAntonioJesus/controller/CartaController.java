@@ -9,9 +9,7 @@ public class CartaController {
 
 
     @Autowired
-    private final CartaService cartaService;
+    private CartaService cartaService;
 
-    public CartaController (CartaService cartaService){
-        this.cartaService= cartaService;
-    }
+
 }

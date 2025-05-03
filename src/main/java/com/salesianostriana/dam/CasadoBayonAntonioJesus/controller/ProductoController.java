@@ -32,14 +32,32 @@ public class ProductoController {
     @GetMapping("/")
     public String inicio(){
 
-        return "CasadoBayonAntonioJesus";
+        return "web";
     }
 
 
     @GetMapping("/menu")
     public String menu (){
 
-        return "CasadoBayonAntonioJesus";
+        return "web";
+    }
+
+    @GetMapping("/productos/nuevo")
+    public String mostrarFormularioNuevo(Model model) {
+        model.addAttribute("producto", new Producto());
+        return "web";
+    }
+
+    @PostMapping("/productos/nuevo")
+    public String guardarProducto(@ModelAttribute Producto producto) {
+        productoService.savedProduct(producto);
+        return "redirect:/productos";
+    }
+    @GetMapping("/productos")
+    public String listarProductos(Model model){
+        List<Producto> productos = productoService.obtenerTodos();
+        model.addAttribute("productos",productos);
+        return "web";
     }
 
     @GetMapping("/buscar")
@@ -47,7 +65,7 @@ public class ProductoController {
         List<Producto> productos = productoService.buscarPorNombre(nombre);
         model.addAttribute("productos",productos);
         model.addAttribute("terminoBusqueda",nombre);
-        return "CasadoBayonAntonioJesus";
+        return "web";
     }
 
 

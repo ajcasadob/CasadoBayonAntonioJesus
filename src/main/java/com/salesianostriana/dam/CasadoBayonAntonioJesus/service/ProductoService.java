@@ -23,7 +23,10 @@ public class ProductoService {
         return productoRepository.findByNombreContainingIgnoreCase(nombre).stream().toList();
     }
 
-   
+    //GET ALL
+    public List<Producto> obtenerTodos() {
+        return productoRepository.findAll();
+    }
 
     public void deleteProduct(String nombre){
     List<Producto> productoEliminar = productoRepository.findByNombreContainingIgnoreCase(nombre);

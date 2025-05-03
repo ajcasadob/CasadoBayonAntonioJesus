@@ -3,10 +3,13 @@ package com.salesianostriana.dam.CasadoBayonAntonioJesus.service;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.controller.ProductoController;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.model.Producto;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.repository.ProductoRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductoService {
@@ -17,19 +20,21 @@ public class ProductoService {
 
     public List<Producto> buscarPorNombre (String nombre){
 
-        return productoRepository.findAll().stream().filter(p -> p.getNombre().equalsIgnoreCase(nombre)).toList();
+        return productoRepository.findByNombreContainingIgnoreCase(nombre).stream().toList();
     }
 
    
 
     public void deleteProduct(String nombre){
-    List<Producto> productoEliminar = buscarPorNombre(nombre);
-        productoRepository.deleteAll(productoEliminar);
+    List<Producto> productoEliminar = productoRepository.findByNombreContainingIgnoreCase(nombre);
+        if(!productoEliminar.isEmpty()){
+            productoRepository.deleteAll(productoEliminar);
+        }
     }
 
     public Producto findById(Long id) {
         return productoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Producto no encontrado con ID: " + id));
+                .orElseThrow(() -> new EntityNotFoundException("Producto no encontrado con ID: " + id));
     }
 
     public void savedProduct (Producto producto){

@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 public class ProductoController {
 
@@ -37,6 +39,14 @@ public class ProductoController {
     @GetMapping("/menu")
     public String menu (){
 
+        return "CasadoBayonAntonioJesus";
+    }
+
+    @GetMapping("/buscar")
+    public String buscarProductos (String nombre, Model model){
+        List<Producto> productos = productoService.buscarPorNombre(nombre);
+        model.addAttribute("productos",productos);
+        model.addAttribute("terminoBusqueda",nombre);
         return "CasadoBayonAntonioJesus";
     }
 

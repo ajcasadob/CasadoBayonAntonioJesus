@@ -7,6 +7,7 @@ import com.salesianostriana.dam.CasadoBayonAntonioJesus.service.CartaService;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.service.ProductoService;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -30,14 +31,16 @@ public class ProductoController {
 
 
     @GetMapping("/")
-    public String inicio(){
+    public String inicio(Model model){
+        model.addAttribute("productos",productoService.obtenerTodos());
 
         return "web";
     }
 
 
     @GetMapping("/menu")
-    public String menu (){
+    public String menu (Model model){
+        model.addAttribute("productos",productoService.obtenerTodos());
 
         return "web";
     }
@@ -45,18 +48,27 @@ public class ProductoController {
     @GetMapping("/productos/nuevo")
     public String mostrarFormularioNuevo(Model model) {
         model.addAttribute("producto", new Producto());
+        model.addAttribute("productos",productoService.obtenerTodos());
         return "web";
     }
 
     @PostMapping("/productos/nuevo")
-    public String guardarProducto(@ModelAttribute Producto producto) {
+    public String guardarProducto( @ModelAttribute Producto producto, BindingResult result, Model model) {
+
+        if(result.hasErrors()){
+            model.addAttribute("productos",productoService.obtenerTodos());
+            return "web";
+        }
+
         productoService.savedProduct(producto);
+
+
         return "redirect:/productos";
     }
     @GetMapping("/productos")
     public String listarProductos(Model model){
-        List<Producto> productos = productoService.obtenerTodos();
-        model.addAttribute("productos",productos);
+       model.addAttribute("productos",productoService.obtenerTodos());
+       model.addAttribute("producto", new Producto());
         return "web";
     }
 
@@ -65,7 +77,8 @@ public class ProductoController {
         List<Producto> productos = productoService.buscarPorNombre(nombre);
         model.addAttribute("productos",productos);
         model.addAttribute("terminoBusqueda",nombre);
-        return "web";
+        model.addAttribute("producto", new Producto());
+        return "busqueda";
     }
 
 

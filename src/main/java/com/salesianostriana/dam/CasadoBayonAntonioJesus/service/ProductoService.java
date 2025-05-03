@@ -18,6 +18,7 @@ public class ProductoService {
     @Autowired
     private ProductoRepository productoRepository;
 
+    //Buscar un producto
     public List<Producto> buscarPorNombre (String nombre){
 
         return productoRepository.findByNombreContainingIgnoreCase(nombre).stream().toList();
@@ -27,19 +28,20 @@ public class ProductoService {
     public List<Producto> obtenerTodos() {
         return productoRepository.findAll();
     }
-
+    //Eliminar un producto
     public void deleteProduct(String nombre){
     List<Producto> productoEliminar = productoRepository.findByNombreContainingIgnoreCase(nombre);
         if(!productoEliminar.isEmpty()){
             productoRepository.deleteAll(productoEliminar);
         }
     }
-
+    //Buscar un producto por id
     public Producto findById(Long id) {
         return productoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Producto no encontrado con ID: " + id));
     }
 
+    //Guardar un producto
     public void savedProduct (Producto producto){
 
         productoRepository.save(producto);

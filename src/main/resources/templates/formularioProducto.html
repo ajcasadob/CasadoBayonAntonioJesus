@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuevo Producto</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-image: url([[@{/img/pattern.jpg}]]); /* Tu imagen de fondo */
+            background-repeat: repeat;
+            background-size: auto;
+        }
+
+        .fondo-oscurecido {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+
+      
+    </style>
+</head>
+<body>
+<div class="fondo-oscurecido">
+<div class="container form-container">
+    <h1 class="text-center mb-4">Añadir Nuevo Producto</h1>
+    <form th:action="@{/productos/nuevo}" th:object="${producto}" method="post">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" id="nombre" th:field="*{nombre}" class="form-control" required/>
+        </div>
+
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción:</label>
+            <textarea id="descripcion" th:field="*{descripcion}" class="form-control" rows="3" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="precio" class="form-label">Precio:</label>
+            <input type="number" id="precio" step="0.01" th:field="*{precio}" class="form-control" required/>
+        </div>
+
+        <div class="mb-3">
+            <label for="tipoProducto" class="form-label">Tipo:</label>
+            <select id="tipoProducto" th:field="*{tipoProducto}" class="form-select">
+                <option th:each="tipo : ${T(com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto).values()}"
+                        th:value="${tipo}" th:text="${tipo}"></option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="popularidad" class="form-label">Popularidad:</label>
+            <input type="number" id="popularidad" th:field="*{popularidad}" class="form-control"/>
+        </div>
+
+        <div class="mb-3">
+            <label for="url" class="form-label">URL Imagen:</label>
+            <input type="text" id="url" th:field="*{url}" class="form-control"/>
+        </div>
+
+        <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha:</label>
+            <input type="date" id="fecha" th:field="*{fecha}" class="form-control"/>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>
+</div>
+</body>
+</html>

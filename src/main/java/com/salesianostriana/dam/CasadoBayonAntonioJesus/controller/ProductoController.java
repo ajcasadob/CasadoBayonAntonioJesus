@@ -48,8 +48,8 @@ public class ProductoController {
     @GetMapping("/productos/nuevo")
     public String mostrarFormularioNuevo(Model model) {
         model.addAttribute("producto", new Producto());
-        model.addAttribute("productos",productoService.obtenerTodos());
-        return "web";
+
+        return "formularioProducto";
     }
 
     @PostMapping("/productos/nuevo")
@@ -57,7 +57,7 @@ public class ProductoController {
 
         if(result.hasErrors()){
             model.addAttribute("productos",productoService.obtenerTodos());
-            return "web";
+            return "formularioProducto";
         }
 
         productoService.savedProduct(producto);

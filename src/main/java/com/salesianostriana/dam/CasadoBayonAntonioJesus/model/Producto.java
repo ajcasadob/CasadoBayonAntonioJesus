@@ -3,6 +3,7 @@ package com.salesianostriana.dam.CasadoBayonAntonioJesus.model;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto;
 import jakarta.persistence.*;
 import lombok.*;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -14,7 +15,7 @@ import java.time.LocalDate;
 public class Producto {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy  = GenerationType.IDENTITY)
     private Long id;
 
     private String nombre;
@@ -34,7 +35,7 @@ public class Producto {
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @ManyToOne
+    @ManyToOne(optional = true)
     @JoinColumn(foreignKey = @ForeignKey (name="fk_producto_carta"))
     private Carta carta;
 

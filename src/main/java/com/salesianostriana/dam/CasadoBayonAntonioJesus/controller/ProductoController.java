@@ -11,10 +11,7 @@ import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -65,10 +62,31 @@ public class ProductoController {
 
         return "redirect:/productos";
     }
+
+    @GetMapping("/productos/editar/{idProducto}")
+    public String mostrarFormularioConProductoCargado(Model model , @PathVariable Long idProducto) {
+
+        model.addAttribute("producto", productoService.findById(idProducto));
+
+        return "formularioProducto";
+    }
+
+    @PostMapping("/productos/editar/{idProducto}")
+    public String editarProducto( @ModelAttribute Producto producto, BindingResult result, Model model) {
+
+        if(result.hasErrors()){
+            model.addAttribute("productos",productoService.obtenerTodos());
+            return "formularioProducto";
+        }
+
+        productoService.editProduct(producto);
+
+        return "redirect:/productos";
+    }
+
     @GetMapping("/productos")
     public String listarProductos(Model model){
-       model.addAttribute("productos",productoService.obtenerTodos());
-       model.addAttribute("producto", new Producto());
+        model.addAttribute("productos",productoService.obtenerTodos());
         return "web";
     }
 
@@ -80,6 +98,5 @@ public class ProductoController {
         model.addAttribute("producto", new Producto());
         return "busqueda";
     }
-
 
 }

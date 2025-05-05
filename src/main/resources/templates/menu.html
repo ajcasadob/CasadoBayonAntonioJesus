@@ -43,9 +43,8 @@
                                     </div>
                                     <div class="col-md-6 text-start">
                                         <p class="h5" th:text="'Precio: ' + ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></p>
-                                        <p class="text-muted" th:text="'Fecha de creación: ' + ${producto.fecha}"></p>
-                                        <p th:class="${producto.popularidad > 7 ? 'text-success' : 'text-warning'}" 
-                                           th:text="'Popularidad: ' + ${producto.popularidad} + '/10'"></p>
+                                        <p class="text-muted" th:text="'Fecha de creación: ' + ${#temporals.format(producto.fecha, 'dd/MM/yyyy')}"></p>                                        <p th:class="${producto.popularidad > 7 ? 'text-success' : 'text-warning'}"
+                                                                                                                                                                                                  th:text="'Popularidad: ' + ${producto.popularidad} + '/10'"></p>
                                         <hr>
                                         <h6>Descripción:</h6>
                                         <p th:text="${producto.descripcion}"></p>

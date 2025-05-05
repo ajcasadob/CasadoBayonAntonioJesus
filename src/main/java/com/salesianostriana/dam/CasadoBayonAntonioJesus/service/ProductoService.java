@@ -36,7 +36,7 @@ public class ProductoService {
         }
     }
     //Buscar un producto por id
-    public Producto findById(Long id) {
+    public Producto findById(Long id) throws EntityNotFoundException {
         return productoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Producto no encontrado con ID: " + id));
     }
@@ -47,6 +47,19 @@ public class ProductoService {
         productoRepository.save(producto);
     }
 
+
+    //editar producto
+    public void editProduct(Producto producto) {
+        Producto productoExistente = findById(producto.getId());
+        productoExistente.setNombre(producto.getNombre());
+        productoExistente.setPrecio(producto.getPrecio());
+        productoExistente.setDescripcion(producto.getDescripcion());
+        productoExistente.setTipoProducto(producto.getTipoProducto());
+        productoExistente.setPopularidad(producto.getPopularidad());
+        productoExistente.setUrl(producto.getUrl());
+        productoExistente.setFecha(producto.getFecha());
+        productoRepository.save(productoExistente);
+    }
 
 
 }

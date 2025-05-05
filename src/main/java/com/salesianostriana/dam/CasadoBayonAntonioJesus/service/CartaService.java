@@ -20,7 +20,7 @@ public class CartaService {
         return cartaRepository.findAll();
     }
 
-    public Carta findById(Long id) {
+    public Carta findById(Long id)  throws  RuntimeException {
         return cartaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Carta no encontrada con ID: " + id));
     }

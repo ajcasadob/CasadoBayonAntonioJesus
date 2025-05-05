@@ -26,6 +26,14 @@
 <div class="container form-container">
     <h1 class="text-center mb-4">Añadir Nuevo Producto</h1>
     <form th:action="@{/productos/nuevo}" th:object="${producto}" method="post">
+
+
+        <div class="d-none">
+            <label for="identificador" class="form-label">Identificador:</label>
+            <input type="number" id="identificador" th:field="*{id}" class="form-control"/>
+        </div>
+
+
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre:</label>
             <input type="text" id="nombre" th:field="*{nombre}" class="form-control" required/>
@@ -51,7 +59,7 @@
 
         <div class="mb-3">
             <label for="popularidad" class="form-label">Popularidad:</label>
-            <input type="number" id="popularidad" th:field="*{popularidad}" class="form-control"/>
+            <input type="number" id="popularidad" th:field="*{popularidad}" class="form-control" max="10" min="0" step="1"/>
         </div>
 
         <div class="mb-3">

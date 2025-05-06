@@ -30,13 +30,13 @@ public class ProductoService {
     }
     //Eliminar un producto
     public void deleteProduct(String nombre){
-    List<Producto> productoEliminar = productoRepository.findByNombreContainingIgnoreCase(nombre);
+        List<Producto> productoEliminar = productoRepository.findByNombreContainingIgnoreCase(nombre);
         if(!productoEliminar.isEmpty()){
             productoRepository.deleteAll(productoEliminar);
         }
     }
     //Buscar un producto por id
-    public Producto findById(Long id) throws EntityNotFoundException {
+    public Producto findById(Long id) {
         return productoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Producto no encontrado con ID: " + id));
     }
@@ -45,8 +45,12 @@ public class ProductoService {
     public void savedProduct (Producto producto){
 
         productoRepository.save(producto);
-    }
 
+    }
+    //Obtener los primeros cuatro productos
+    public List<Producto> obtenerPrimerosCuatroProductos() {
+        return productoRepository.findAll().stream().limit(4).toList();
+    }
 
     //editar producto
     public void editProduct(Producto producto) {
@@ -61,5 +65,29 @@ public class ProductoService {
         productoRepository.save(productoExistente);
     }
 
+    public void deleteById(Long id) {
+        productoRepository.deleteById(id);
+    }
+
+    public List<Producto> obtenerTodosDescripcionReducida() {
+        return productoRepository.findAll().stream()
+                .map(p -> {
+                    p.setDescripcion(p.getDescripcion().length() > 50 ? p.getDescripcion().substring(0, 50) + "..." : p.getDescripcion());
+                    return p;
+                })
+                .collect(Collectors.toList());
+    }
+
+    public List<Producto> obtenerMejorValorados(){
+
+        return productoRepository.obtenerMejorValorados().stream()
+                .limit(6)
+                .toList();
+
+    }
+    //Obtener los dos últimos productos
+    public List<Producto> obtenerUltimosDosProductos() {
+        return productoRepository.findTop2ByOrderByFechaDesc();
+    }
 
 }

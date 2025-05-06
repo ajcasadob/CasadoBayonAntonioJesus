@@ -29,17 +29,24 @@ public class ProductoController {
 
     @GetMapping("/")
     public String inicio(Model model){
-        model.addAttribute("productos",productoService.obtenerTodos());
+        List<Producto> productosGaleria = productoService.obtenerTodos();
+
+        model.addAttribute("sobreNosostros", productoService.obtenerPrimerosCuatroProductos());
+        model.addAttribute("productosGaleria", productosGaleria);
+
+        model.addAttribute("productos1",productoService.obtenerMejorValorados());
+        model.addAttribute("productosNovedades", productoService.obtenerUltimosDosProductos());
 
         return "web";
     }
 
 
-    @GetMapping("/menu")
+
+    @GetMapping("/menu2")
     public String menu (Model model){
         model.addAttribute("productos",productoService.obtenerTodos());
 
-        return "web";
+        return "menu2";
     }
 
     @GetMapping("/productos/nuevo")
@@ -86,8 +93,8 @@ public class ProductoController {
 
     @GetMapping("/productos")
     public String listarProductos(Model model){
-        model.addAttribute("productos",productoService.obtenerTodos());
-        return "web";
+
+        return "redirect:/";
     }
 
     @GetMapping("/buscar")
@@ -97,6 +104,18 @@ public class ProductoController {
         model.addAttribute("terminoBusqueda",nombre);
         model.addAttribute("producto", new Producto());
         return "busqueda";
+    }
+
+    @GetMapping("/admin")
+    public String admin(Model model){
+        model.addAttribute("productos",productoService.obtenerTodosDescripcionReducida());
+        return "admin";
+    }
+
+    @GetMapping("/productos/borrar/{id}")
+    public String borrarProducto(@PathVariable Long id) {
+        productoService.deleteById(id);
+        return "redirect:/admin";
     }
 
 }

@@ -28,6 +28,7 @@ public class ProductoService {
     public List<Producto> obtenerTodos() {
         return productoRepository.findAll();
     }
+
     //Eliminar un producto
     public void deleteProduct(String nombre){
         List<Producto> productoEliminar = productoRepository.findByNombreContainingIgnoreCase(nombre);

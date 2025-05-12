@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Magic´s burger</title>
-
-
 </head>
 
 <body>
@@ -19,6 +17,7 @@
                 <img th:src="${producto.url}" class="card-img-top" alt="Hamburguesa clásica">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${producto.nombre}"></h5>
+
                     <button class="btn btn-primary" data-bs-toggle="modal"
                             th:data-bs-target="'#modal-' + ${producto.id}">
                         Ver Detalles
@@ -47,6 +46,8 @@
                                        th:text="'Precio: ' + ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></p>
                                     <p class="text-muted"
                                        th:text="'Fecha de creación: ' + ${#temporals.format(producto.fecha, 'dd/MM/yyyy')}"></p>
+                                    <p class="text-muted"
+                                       th:text="'Tipo: ' + ${producto.tipoProducto}"></p>
                                     <p th:class="${producto.popularidad > 7 ? 'text-success' : 'text-warning'}"
                                        th:text="'Popularidad: ' + ${producto.popularidad} + '/10'"></p>
                                     <hr>
@@ -64,7 +65,5 @@
         </div>
     </div>
 </section>
-
-
 </body>
 </html>

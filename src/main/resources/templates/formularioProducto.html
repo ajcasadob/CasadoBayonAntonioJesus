@@ -37,7 +37,7 @@
                 <div class="col-md-6">
                     <label for="tipoProducto" class="form-label">Tipo:</label>
                     <select id="tipoProducto" th:field="*{tipoProducto}" class="form-select" required>
-                        <option value="" disabled selected>Seleccione un tipo de producto</option>
+                        <option  value="" disabled selected>Seleccione un tipo de producto </option>
                         <option th:each="tipo : ${T(com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto).values()}"
                                 th:value="${tipo}" th:text="${tipo}"></option>
                     </select>

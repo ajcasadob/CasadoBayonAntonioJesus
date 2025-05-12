@@ -8,6 +8,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
+import static org.apache.catalina.security.SecurityUtil.remove;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -39,7 +41,17 @@ public class Producto {
     @JoinColumn(foreignKey = @ForeignKey (name="fk_producto_carta"))
     private Carta carta;
 
+    //METODOS HELPER
 
+    public void addToCarta(Carta carta) {
+        this.carta = carta;
+        carta.getListaProducto().add(this);
+    }
+
+    public void removeFromCarta(Carta carta) {
+        carta.getListaProducto().remove(this);
+        this.carta = null;
+    }
 
 
 }

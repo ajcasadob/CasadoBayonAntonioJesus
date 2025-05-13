@@ -86,6 +86,13 @@ public class ProductoService {
                 .toList();
 
     }
+    //Calcular descuentos a los productos
+    public Producto descuentoProducto (int id ){
+        Producto encontrado = findById(id);
+        productoRepository.findAll().stream().filter(p -> p.getPrecio() *  )
+        return Producto;
+    }
+
     //Obtener los dos últimos productos
     public List<Producto> obtenerUltimosDosProductos() {
         return productoRepository.findTop2ByOrderByFechaDesc();

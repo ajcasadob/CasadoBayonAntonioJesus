@@ -33,6 +33,7 @@ public class Producto {
 
     private int popularidad;
     private String url;
+    @Lob
     private String txtAlternativo;
 
 

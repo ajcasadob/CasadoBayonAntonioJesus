@@ -16,11 +16,13 @@ import static org.apache.catalina.security.SecurityUtil.remove;
 @Entity
 public class Producto {
 
+
     @Id
     @GeneratedValue(strategy  = GenerationType.IDENTITY)
     private Long id;
 
     private String nombre;
+
 
     private String descripcion;
 
@@ -31,6 +33,9 @@ public class Producto {
 
     private int popularidad;
     private String url;
+    private String txtAlternativo;
+
+
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate fecha;

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="hamburguesería">
     <title>Magic´s burger</title>
 </head>
 
@@ -14,7 +15,7 @@
     <div class="row text-center">
         <div th:each="producto : ${productos1}" class="col-md-4 mb-4">
             <div class="card h-100">
-                <img th:src="${producto.url}" class="card-img-top" alt="Hamburguesa clásica">
+                <img th:src="${producto.url}" class="card-img-top" th:alt="${producto.txtAlternativo}">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${producto.nombre}"></h5>
 
@@ -39,7 +40,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <img th:src="${producto.url}" class="img-fluid rounded mb-3"
-                                         alt="Imagen del producto">
+                                         th:alt="${producto.txtAlternativo}">
                                 </div>
                                 <div class="col-md-6 text-start">
                                     <p class="h5"

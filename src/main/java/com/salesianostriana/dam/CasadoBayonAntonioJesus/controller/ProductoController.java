@@ -97,6 +97,8 @@ public class ProductoController {
         return "redirect:/";
     }
 
+
+
     @GetMapping("/buscar")
     public String buscarProductos (String nombre, Model model){
         List<Producto> productos = productoService.buscarPorNombre(nombre);
@@ -117,5 +119,12 @@ public class ProductoController {
         productoService.deleteById(id);
         return "redirect:/admin";
     }
+    @GetMapping("/productos/descuento")
+    public String mostrarProductosConDescuento(Model model) {
+        List<Producto> productosConDescuento = productoService.obtenerProductosConDescuento();
+        model.addAttribute("productos", productosConDescuento);
+        return "productosConDescuento";
+    }
+
 
 }

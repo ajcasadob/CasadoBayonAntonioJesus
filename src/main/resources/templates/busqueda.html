@@ -23,12 +23,14 @@
 
         .fondo-oscurecido {
           background-color: rgba(0, 0, 0, 0.85);
-          height: 125vh;
+
         }
     </style>
 </head>
-<body >
+
+<body class="d-flex flex-column min-vh-100 ">
 <div class="fondo-oscurecido">
+
     <!-- Mostar resultado -->
     <section id="resultados-busqueda" class="container py-4" th:if="${productos != null}">
         <a href="/" class="btn btn-light position-absolute top-0 start-0 m-3">
@@ -65,4 +67,5 @@
     <footer th:replace="~{footer :: pie}" class=" text-white py-5"> </footer>
 </div>
 </body>
+
 </html>

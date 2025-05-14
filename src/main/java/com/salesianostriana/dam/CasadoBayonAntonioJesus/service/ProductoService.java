@@ -3,12 +3,13 @@ package com.salesianostriana.dam.CasadoBayonAntonioJesus.service;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.controller.ProductoController;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.model.Producto;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.repository.ProductoRepository;
+import com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -56,20 +57,14 @@ public class ProductoService {
     //editar producto
     public void editProduct(Producto producto) {
         Producto productoExistente = findById(producto.getId());
-        productoExistente.setNombre(producto.getNombre());
-        productoExistente.setPrecio(producto.getPrecio());
-        productoExistente.setDescripcion(producto.getDescripcion());
-        productoExistente.setTipoProducto(producto.getTipoProducto());
-        productoExistente.setPopularidad(producto.getPopularidad());
-        productoExistente.setUrl(producto.getUrl());
-        productoExistente.setFecha(producto.getFecha());
+
         productoRepository.save(productoExistente);
     }
 
     public void deleteById(Long id) {
         productoRepository.deleteById(id);
     }
-
+    // Recortar la descripción de los productos a 50 caracteres
     public List<Producto> obtenerTodosDescripcionReducida() {
         return productoRepository.findAll().stream()
                 .map(p -> {
@@ -78,7 +73,7 @@ public class ProductoService {
                 })
                 .collect(Collectors.toList());
     }
-
+    //Obtener los productos con la popularidad mas alta y mostar los 6
     public List<Producto> obtenerMejorValorados(){
 
         return productoRepository.obtenerMejorValorados().stream()
@@ -86,16 +81,27 @@ public class ProductoService {
                 .toList();
 
     }
-    //Calcular descuentos a los productos
-    public Producto descuentoProducto (int id ){
-        Producto encontrado = findById(id);
-        productoRepository.findAll().stream().filter(p -> p.getPrecio() *  )
-        return Producto;
-    }
+
+
+
 
     //Obtener los dos últimos productos
     public List<Producto> obtenerUltimosDosProductos() {
         return productoRepository.findTop2ByOrderByFechaDesc();
     }
 
+   //Obtener los productos con popularidad menor a 5 y hacer un descuento
+    public List<Producto> obtenerProductosConDescuento() {
+        return productoRepository.findByPopularidadMenor().stream()
+                .map(p -> {
+                    p.setPrecio(p.getPrecio() * 0.9);
+                    productoRepository.save(p);
+                    return p;
+                })
+                .collect(Collectors.toList());
+    }
+
+
 }
+
+

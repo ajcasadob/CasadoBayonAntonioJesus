@@ -50,7 +50,7 @@
                                        th:text="'Fecha de creación: ' + ${#temporals.format(producto.fecha, 'dd/MM/yyyy')}"></p>
                                     <p class="text-muted"
                                        th:text="'Tipo: ' + ${producto.tipoProducto}"></p>
-                                    <p th:class="${producto.popularidad > 7 ? 'text-success' : 'text-warning'}"
+                                    <p th:class="${producto.popularidad > 5 ? 'text-success' : 'text-warning'}"
                                        th:text="'Popularidad: ' + ${producto.popularidad} + '/10'"></p>
                                     <hr>
                                     <h6>Descripción:</h6>

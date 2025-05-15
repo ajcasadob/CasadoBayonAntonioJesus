@@ -32,4 +32,8 @@ public interface ProductoRepository  extends JpaRepository <Producto, Long> {
     @Query("SELECT p FROM Producto p ORDER BY p.nombre ASC")
     List<Producto> findByNombreAsc();
 
+    @Query("SELECT p FROM Producto p ORDER BY p.fecha DESC")
+    List<Producto> findByFechaDesc();
+
+
 }

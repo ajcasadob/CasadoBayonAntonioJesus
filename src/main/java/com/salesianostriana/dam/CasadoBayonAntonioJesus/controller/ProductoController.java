@@ -54,6 +54,10 @@ public class ProductoController {
             case "nombreAsc":
                 model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorNombreAsc());
                 break;
+            case "fechaDesc":
+                model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorFechaDesc());
+                break;
+
             default:
                 model.addAttribute("productos", productoService.obtenerTodos());
                 break;

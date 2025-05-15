@@ -92,7 +92,7 @@ public class ProductoService {
 
    //Obtener los productos con popularidad menor a 5 y hacer un descuento
     public List<Producto> obtenerProductosConDescuento() {
-        double porcentajeDescuento = 10;
+        double porcentajeDescuento = 15;
         double divisor = 100;
         return productoRepository.findByPopularidadMenor().stream()
                 .map(p -> {
@@ -115,6 +115,10 @@ public class ProductoService {
     //Obtener los productos ordenados por nombre de menor a mayor
     public List<Producto> obtenerProductosOrdenadosPorNombreAsc() {
         return productoRepository.findByNombreAsc();
+    }
+    //Obtener los productos ordenados por fecha de menor a mayor
+    public List<Producto> obtenerProductosOrdenadosPorFechaDesc() {
+        return productoRepository.findByFechaDesc();
     }
 
 

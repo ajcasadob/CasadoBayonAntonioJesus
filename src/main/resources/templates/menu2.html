@@ -35,10 +35,16 @@
         <h4 class="text-start">Carta de productos</h4>
 
         <!-- Botones para ordenar -->
-        <div class="d-flex justify-content-end mb-3">
-            <a th:href="@{/menu2(orden='precioAsc')}" class="btn btn-primary me-2">Ordenar por Precio Asc</a>
-            <a th:href="@{/menu2(orden='precioDesc')}" class="btn btn-primary me-2">Ordenar por Precio Desc</a>
-            <a th:href="@{/menu2(orden='nombreAsc')}" class="btn btn-primary">Ordenar por Nombre</a>
+        <div class="dropdown d-flex justify-content-end mb-3">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Filtrar
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" th:href="@{/menu2(orden='precioAsc')}">Ordenar por Precio Asc</a></li>
+                <li><a class="dropdown-item" th:href="@{/menu2(orden='precioDesc')}">Ordenar por Precio Desc</a></li>
+                <li><a class="dropdown-item" th:href="@{/menu2(orden='nombreAsc')}">Ordenar por Nombre</a></li>
+                <li><a class="dropdown-item" th:href="@{/menu2(orden='fechaDesc')}">Ordenar por Fecha</a></li>
+            </ul>
         </div>
 
         <div class="row text-center">
@@ -76,7 +82,7 @@
                                         <p class="text-muted"
                                            th:text="'Fecha de creación: ' + ${#temporals.format(producto.fecha, 'dd/MM/yyyy')}"></p>
                                         <p th:text="'Tipo: ' + ${producto.tipoProducto}"></p>
-                                        <p th:class="${producto.popularidad > 7 ? 'text-success' : 'text-warning'}"
+                                        <p th:class="${producto.popularidad > 5 ? 'text-success' : 'text-warning'}"
                                            th:text="'Popularidad: ' + ${producto.popularidad} + '/10'"></p>
                                         <hr>
                                         <h6>Descripción:</h6>

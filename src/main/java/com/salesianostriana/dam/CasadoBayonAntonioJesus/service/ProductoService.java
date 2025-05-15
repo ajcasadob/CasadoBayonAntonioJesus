@@ -37,7 +37,7 @@ public class ProductoService {
             productoRepository.deleteAll(productoEliminar);
         }
     }
-    //Buscar un producto por id
+    //Buscar un producto por su id
     public Producto findById(Long id) {
         return productoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Producto no encontrado con ID: " + id));
@@ -73,7 +73,7 @@ public class ProductoService {
                 })
                 .collect(Collectors.toList());
     }
-    //Obtener los productos con la popularidad mas alta y mostar los 6
+    //Obtener los productos con la popularidad más alta y mostar los 6
     public List<Producto> obtenerMejorValorados(){
 
         return productoRepository.obtenerMejorValorados().stream()
@@ -92,9 +92,11 @@ public class ProductoService {
 
    //Obtener los productos con popularidad menor a 5 y hacer un descuento
     public List<Producto> obtenerProductosConDescuento() {
+        double porcentajeDescuento = 10;
+        double divisor = 100;
         return productoRepository.findByPopularidadMenor().stream()
                 .map(p -> {
-                    p.setPrecio(p.getPrecio() * 0.9);
+                    p.setPrecio(p.getPrecio() * ((divisor - porcentajeDescuento) / divisor));
                     productoRepository.save(p);
                     return p;
                 })

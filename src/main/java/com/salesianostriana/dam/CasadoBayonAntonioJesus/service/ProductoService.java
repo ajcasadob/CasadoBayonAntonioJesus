@@ -97,10 +97,24 @@ public class ProductoService {
         return productoRepository.findByPopularidadMenor().stream()
                 .map(p -> {
                     p.setPrecio(p.getPrecio() * ((divisor - porcentajeDescuento) / divisor));
-                    productoRepository.save(p);
+
                     return p;
                 })
                 .collect(Collectors.toList());
+    }
+
+
+    //Obtener los productos ordenados por precio de mayor a menor
+    public List<Producto> obtenerProductosOrdenadosPorPrecioDesc() {
+        return productoRepository.findByPrecioDesc();
+    }
+    //Obtener los productos ordenados por precio de menor a mayor
+    public List<Producto> obtenerProductosOrdenadosPorPrecioAsc() {
+        return productoRepository.findByPrecioAsc();
+    }
+    //Obtener los productos ordenados por nombre de menor a mayor
+    public List<Producto> obtenerProductosOrdenadosPorNombreAsc() {
+        return productoRepository.findByNombreAsc();
     }
 
 

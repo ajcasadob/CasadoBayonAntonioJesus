@@ -43,9 +43,21 @@ public class ProductoController {
 
 
     @GetMapping("/menu2")
-    public String menu (Model model){
-        model.addAttribute("productos",productoService.obtenerTodos());
-
+    public String menu(@RequestParam(value = "orden", required = false, defaultValue = "todos") String orden, Model model) {
+        switch (orden) {
+            case "precioAsc":
+                model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorPrecioAsc());
+                break;
+            case "precioDesc":
+                model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorPrecioDesc());
+                break;
+            case "nombreAsc":
+                model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorNombreAsc());
+                break;
+            default:
+                model.addAttribute("productos", productoService.obtenerTodos());
+                break;
+        }
         return "menu2";
     }
 
@@ -125,6 +137,7 @@ public class ProductoController {
         model.addAttribute("productos", productosConDescuento);
         return "productosConDescuento";
     }
+
 
 
 }

@@ -19,13 +19,23 @@ INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID
 INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 4, 'https://i.imgur.com/SkL6dgT.jpeg', 'Foto de hamburguesa con chistorra y huevo frito', 14.50, 1, 'Rubia gallega dry aged, bacon ahumado crunch, cheddar doble, emulsión de huevo frito con chistorra.', 'Winner23', 'HAMBURGUESA');
 
 -- Helado Cookie
-INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 5, 'https://i.imgur.com/qw6KoZl.jpeg', 'Foto de helado cookie con toppings', 9.00, 1, 'con toppings', 'Helado Cookie', 'POSTRE');
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 5, 'https://i.imgur.com/qw6KoZl.jpeg', 'Foto de burguer', 9.00, 1, 'Doble patty de buey gallega, cecina, salsa bfp', 'Tifa', 'HAMBURGUESA');
 
 -- Hamburguesa Vegana
 INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 4, 'https://i.imgur.com/zUbsHpw.jpeg', 'Foto de hamburguesa vegana con base de garbanzos', 16.50, 1, 'base de garbanzos', 'Vegana', 'HAMBURGUESA');
 
--- Batido de Fresa
-INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 5, 'https://i.imgur.com/75lulnH.jpeg', 'Foto de batido de fresa con leche de almendras', 7.00, 1, 'con leche de almendras', 'Batido de Fresa', 'BEBIDA');
+-- Bebidas
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 8, 'https://i.imgur.com/5Iy9IFo.jpeg', 'Foto de bebida', 2.50, 1, 'Tan refrescante como siempre', 'Coca-cola', 'BEBIDA');
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 7, 'https://i.imgur.com/HpmOUu3.jpeg', 'Foto de nestle', 2.50, 1, 'Un poco de maracuya nunca viene mal', 'Te', 'BEBIDA');
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 3, 'https://i.imgur.com/2j7XedE.png', 'Foto de agua', 1.50, 1, 'Para los que no quieren gas', 'Agua', 'BEBIDA');
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 10, 'https://i.imgur.com/1VmC7uM.jpeg', 'Foto de cerveza', 3.50, 1, 'Para volverte una estrella', 'Cerveza', 'BEBIDA');
 
--- Brownie Chocolate
-INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 5, 'https://i.imgur.com/SEvv7Dr.png', 'Foto de brownie de chocolate con nueces', 10.00, 1, 'con nueces', 'Brownie Chocolate', 'POSTRE');
+
+-- Postres
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 10, 'https://i.imgur.com/u8nDHkx.jpeg', 'Foto de tarta de queso', 6.50, 1, 'tarta de queso payoyo al horno', 'Tarta de queso', 'POSTRE');
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 6, 'https://i.imgur.com/oxEarjm.jpeg', 'Foto de tarta de chocolate', 4.50, 1, 'tarta de tres chocolates, para los adictos al chocolate en todos sus sabores', 'Tarta de chocolate', 'POSTRE');
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 8, 'https://i.imgur.com/jPXD9jp.jpeg', 'Foto de torrija', 7.00, 1, 'torrija con helado de vainilla', 'Torrija con helado', 'POSTRE');
+
+--Postres
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 7, 'https://i.imgur.com/lmELhrQ.jpeg', 'Foto de patatas', 4.50, 1, 'Patatas con queso y pulled pork', 'Patatas con pulled pork', 'ENTRANTE');
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO) VALUES ('2025-01-12', 6, 'https://i.imgur.com/xBpUkBW.jpeg', 'Foto de croquetas', 5.50, 1, 'Unas croquetas de chuletón de buey gallego', 'Croquetas', 'ENTRANTE');

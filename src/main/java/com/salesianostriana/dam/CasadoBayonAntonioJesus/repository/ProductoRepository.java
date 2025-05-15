@@ -20,7 +20,7 @@ public interface ProductoRepository  extends JpaRepository <Producto, Long> {
 
     List<Producto> findTop2ByOrderByFechaDesc();
 
-    @Query("SELECT p FROM Producto p WHERE p.popularidad <= 5 ")
+    @Query("SELECT p FROM Producto p WHERE p.popularidad < 5 ")
     List<Producto> findByPopularidadMenor();
 
 

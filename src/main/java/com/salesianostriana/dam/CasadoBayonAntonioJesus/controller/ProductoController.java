@@ -21,6 +21,7 @@ public class ProductoController {
 
     @Autowired
     private  ProductoService productoService;
+    private CartaService cartaService;
 
 
 
@@ -68,6 +69,8 @@ public class ProductoController {
     @GetMapping("/productos/nuevo")
     public String mostrarFormularioNuevo(Model model) {
         model.addAttribute("producto", new Producto());
+        // Obtener todas las cartas
+
 
         return "formularioProducto";
     }

@@ -29,6 +29,69 @@
 </head>
 <body>
 <div class="fondo-oscurecido">
+    <header class="position-relative">
+        <img src="https://i.imgur.com/LAJg0hn.png" class="img-fluid w-100" alt="Banner Magic's Burger">
+        <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+            <h1 class="display-4 fw-bold">Bienvenido a Magic's Burger</h1>
+            <p class="lead">La magia del sabor en cada bocado</p>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-0">
+        <div class="container-fluid">
+    
+          <a  class="navbar-brand" th:href="@{/#home}">
+            <img src="https://i.postimg.cc/WzQmp01V/magic.jpg"  width="60px" height="60px" alt="Magic burguers" class="rounded-circle">
+          </a>
+    
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" th:href="@{/#home}"><i class="bi bi-house-door"></i>
+                  Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/#menu}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Mejor valorados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/menu2}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Menú Completo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/productos/descuento}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Descuentos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/#galeria}"><i class="bi bi-image"></i> Galería</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/#contacto}"><i class="bi bi-telephone-inbound"></i> Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#login" data-bs-toggle="modal" data-bs-target="#loginModal"><i
+                        class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/admin}"><i class="bi bi-box-arrow-in-right"></i> Administrador</a>
+              </li>
+            </ul>
+            <form class="d-flex me-3" th:action="@{/buscar}" method="get">
+              <input class="form-control me-2"
+                     type="search"
+                     name="nombre"
+                     th:value="${terminoBusqueda}"
+                     placeholder="Buscar productos..."
+                     aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
     <div class="container form-container">
         <a href="/" class="btn btn-light position-absolute top-0 start-0 m-3">
         <i class="bi bi-arrow-left"></i> Inicio
@@ -50,6 +113,16 @@
                                 th:value="${tipo}" th:text="${tipo}"></option>
                     </select>
                 </div>
+            </div>
+            <div class="mb-3">
+                <label for="carta" class="form-label">Carta:</label>
+                <select id="carta" name="idCarta" class="form-select" required>
+                    <option value="" disabled selected>Selecciona una carta</option>
+                    <option th:each="c : ${cartas}"
+                            th:value="${c.idCarta}"
+                            th:text="${'Carta ' + c.idCarta}">
+                    </option>
+                </select>
             </div>
 
             <div class="mb-3">
@@ -88,7 +161,11 @@
             </div>
         </form>
     </div>
+    <footer th:replace="~{footer :: pie}" class=" text-white py-5">
+
+    </footer>
 </div>
+
 </body>
 </html>
 

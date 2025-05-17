@@ -6,6 +6,7 @@ import com.salesianostriana.dam.CasadoBayonAntonioJesus.model.Producto;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.service.CartaService;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.service.ProductoService;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ public class ProductoController {
 
     @Autowired
     private  ProductoService productoService;
+    @Autowired
     private CartaService cartaService;
 
 
@@ -40,6 +42,13 @@ public class ProductoController {
 
         return "web";
     }
+    @GetMapping("/menu")
+    public String menu (Model model){
+        model.addAttribute("productosValorados", productoService.obtenerMejorValorados());
+
+        return "redirect:/";
+    }
+
 
 
 
@@ -66,27 +75,36 @@ public class ProductoController {
         return "menu2";
     }
 
+
     @GetMapping("/productos/nuevo")
     public String mostrarFormularioNuevo(Model model) {
         model.addAttribute("producto", new Producto());
-        // Obtener todas las cartas
+        model.addAttribute("cartas", cartaService.findAllCartas());
+
 
 
         return "formularioProducto";
     }
 
     @PostMapping("/productos/nuevo")
-    public String guardarProducto( @ModelAttribute Producto producto, BindingResult result, Model model) {
+    public String guardarProducto(
+            @ModelAttribute Producto producto,
+            BindingResult result,
+            @RequestParam("idCarta") Long idCarta,
+            Model model) {
 
-        if(result.hasErrors()){
-            model.addAttribute("productos",productoService.obtenerTodos());
+        if (result.hasErrors()) {
+            model.addAttribute("cartas", cartaService.findAllCartas());
             return "formularioProducto";
         }
 
+        Carta carta = cartaService.findCartaById(idCarta);
+
+
+        producto.addToCarta(carta);
         productoService.savedProduct(producto);
 
-
-        return "redirect:/productos";
+        return "redirect:/productos/nuevo";
     }
 
     @GetMapping("/productos/editar/{idProducto}")

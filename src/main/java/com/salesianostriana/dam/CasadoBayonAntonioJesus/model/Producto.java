@@ -46,7 +46,7 @@ public class Producto {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @ManyToOne(optional = true)
-    @JoinColumn(foreignKey = @ForeignKey (name="fk_producto_carta"))
+    @JoinColumn(name = "id_carta",referencedColumnName = "idCarta", foreignKey = @ForeignKey (name="fk_producto_carta"))
     private Carta carta;
 
     //METODOS HELPER

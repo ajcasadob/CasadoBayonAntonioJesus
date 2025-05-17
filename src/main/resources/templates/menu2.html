@@ -33,6 +33,61 @@
         <p class="lead">La magia del sabor en cada bocado</p>
     </div>
 </header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-0">
+    <div class="container-fluid">
+
+      <a  class="navbar-brand" th:href="@{/#home}">
+        <img src="https://i.postimg.cc/WzQmp01V/magic.jpg"  width="60px" height="60px" alt="Magic burguers" class="rounded-circle">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" th:href="@{/#home}"><i class="bi bi-house-door"></i>
+              Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" th:href="@{/#menu}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Mejor valorados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" th:href="@{/menu2}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Menú Completo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" th:href="@{/productos/descuento}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Descuentos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" th:href="@{/#galeria}"><i class="bi bi-image"></i> Galería</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" th:href="@{/#contacto}"><i class="bi bi-telephone-inbound"></i> Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#login" data-bs-toggle="modal" data-bs-target="#loginModal"><i
+                    class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" th:href="@{/admin}"><i class="bi bi-box-arrow-in-right"></i> Administrador</a>
+          </li>
+        </ul>
+        <form class="d-flex me-3" th:action="@{/buscar}" method="get">
+          <input class="form-control me-2"
+                 type="search"
+                 name="nombre"
+                 th:value="${terminoBusqueda}"
+                 placeholder="Buscar productos..."
+                 aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
 <div class="fondo-oscurecido">
 
     <section id="menu2" class="container py-5">
@@ -108,36 +163,8 @@
         </div>
     </section>
 
-    <footer  class=" text-white py-5 ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Sobre Nosotros</h5>
-                    <p>Somos una hamburguesería con pasión por el buen comer, ofreciendo productos frescos y deliciosos.</p>
-                    <ul class="list-unstyled">
-                        <li><i class="bi bi-house-door"></i> <a th:href="@{/}" class="text-white">Quienes somos</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Enlaces Rápidos</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="bi bi-house-door"></i> <a th:href="@{/}" class="text-white">Inicio</a></li>
-                        <li><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px">
-                            <a th:href="@{/menu2}" class="text-white">Menú</a>
-                        </li>
-                        <li><i class="bi bi-telephone-inbound"></i> <a th:href="@{/}" class="text-white">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Redes Sociales</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="bi bi-facebook"></i> <a href="https://www.facebook.com/?locale=es_ES" class="text-white">Facebook</a></li>
-                        <li><i class="bi bi-instagram"></i> <a href="https://www.instagram.com/burgerfoodprn/?hl=es" class="text-white">Instagram</a></li>
-                        <li><i class="bi bi-twitter-x"></i> <a href="https://x.com/?lang=es" class="text-white">Twitter</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <footer th:replace="~{footer :: pie}" class=" text-white py-5">
+
     </footer>
 </div>
 </body>

@@ -3605,3 +3605,307 @@ INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, CARTA_ID
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
 	at com.salesianostriana.dam.CasadoBayonAntonioJesus.CasadoBayonAntonioJesusApplication.main(CasadoBayonAntonioJesusApplication.java:10)
+2025-05-19 09:02:24.633713+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2023-01-12', 3, 'https://i.imgur.com/u3m9HqL.png', 'Foto de burguer', 15.50, 1,[*]"; se esperaba "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2023-01-12', 3, 'https://i.imgur.com/u3m9HqL.png', 'Foto de burguer', 15.50, 1,[*]"; expected "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2023-01-12', 3, 'https://i.imgur.com/u3m9HqL.png', 'Foto de burguer', 15.50, 1, [42001-232]
+2025-05-19 09:02:24.641572+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Una explosión de sabores únicos: carne de rubia gallega dry aged, queso cheddar madurado, bacon bits, pepinillos caseros, crema de galleta, cebolla crujiente y nuestra exclusiva salsa BFP. Ideal para los paladares atrevidos.',"
+Syntax error in SQL statement "[*]'Una explosión de sabores únicos: carne de rubia gallega dry aged, queso cheddar madurado, bacon bits, pepinillos caseros, crema de galleta, cebolla crujiente y nuestra exclusiva salsa BFP. Ideal para los paladares atrevidos.',"; SQL statement:
+'Una explosión de sabores únicos: carne de rubia gallega dry aged, queso cheddar madurado, bacon bits, pepinillos caseros, crema de galleta, cebolla crujiente y nuestra exclusiva salsa BFP. Ideal para los paladares atrevidos.', [42000-232]
+2025-05-19 09:02:24.647557+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Provocacion', 'HAMBURGUESA')"
+Syntax error in SQL statement "[*]'Provocacion', 'HAMBURGUESA')"; SQL statement:
+'Provocacion', 'HAMBURGUESA') [42000-232]
+2025-05-19 09:02:24.650563+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2024-01-12', 4, 'https://i.imgur.com/WURtvZ9.jpeg', 'Foto de hamburguesa clásica', 18.00, 1,[*]"; se esperaba "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2024-01-12', 4, 'https://i.imgur.com/WURtvZ9.jpeg', 'Foto de hamburguesa clásica', 18.00, 1,[*]"; expected "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2024-01-12', 4, 'https://i.imgur.com/WURtvZ9.jpeg', 'Foto de hamburguesa clásica', 18.00, 1, [42001-232]
+2025-05-19 09:02:24.652543+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Una versión gourmet de la clásica cheeseburger: carne de rubia gallega dry aged, crema de queso payoyo, bacon bits crujientes y nuestra inconfundible salsa BFP. Tradición con un toque de distinción.',"
+Syntax error in SQL statement "[*]'Una versión gourmet de la clásica cheeseburger: carne de rubia gallega dry aged, crema de queso payoyo, bacon bits crujientes y nuestra inconfundible salsa BFP. Tradición con un toque de distinción.',"; SQL statement:
+'Una versión gourmet de la clásica cheeseburger: carne de rubia gallega dry aged, crema de queso payoyo, bacon bits crujientes y nuestra inconfundible salsa BFP. Tradición con un toque de distinción.', [42000-232]
+2025-05-19 09:02:24.655534+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Payoya', 'HAMBURGUESA')"
+Syntax error in SQL statement "[*]'Payoya', 'HAMBURGUESA')"; SQL statement:
+'Payoya', 'HAMBURGUESA') [42000-232]
+2025-05-19 09:02:24.658527+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2025-11-12', 5, 'https://i.imgur.com/G3fOw8p.jpeg', 'Foto de hamburguesa gourmet con foie', 20.50, 1,[*]"; se esperaba "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2025-11-12', 5, 'https://i.imgur.com/G3fOw8p.jpeg', 'Foto de hamburguesa gourmet con foie', 20.50, 1,[*]"; expected "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2025-11-12', 5, 'https://i.imgur.com/G3fOw8p.jpeg', 'Foto de hamburguesa gourmet con foie', 20.50, 1, [42001-232]
+2025-05-19 09:02:24.664511+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Exquisita combinación de sabores premium: carne de rubia gallega dry aged con cheddar madurado, coronada con un lingote de foie y nuestra inigualable salsa de cecina de León. Una experiencia de lujo.',"
+Syntax error in SQL statement "[*]'Exquisita combinación de sabores premium: carne de rubia gallega dry aged con cheddar madurado, coronada con un lingote de foie y nuestra inigualable salsa de cecina de León. Una experiencia de lujo.',"; SQL statement:
+'Exquisita combinación de sabores premium: carne de rubia gallega dry aged con cheddar madurado, coronada con un lingote de foie y nuestra inigualable salsa de cecina de León. Una experiencia de lujo.', [42000-232]
+2025-05-19 09:02:24.669498+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Donald', 'HAMBURGUESA')"
+Syntax error in SQL statement "[*]'Donald', 'HAMBURGUESA')"; SQL statement:
+'Donald', 'HAMBURGUESA') [42000-232]
+2025-05-19 09:02:24.676478+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2021-12-12', 4, 'https://i.imgur.com/9BpQi2z.png', 'Foto de hamburguesa con costilla y triple cheddar', 12.00, 1,[*]"; se esperaba "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2021-12-12', 4, 'https://i.imgur.com/9BpQi2z.png', 'Foto de hamburguesa con costilla y triple cheddar', 12.00, 1,[*]"; expected "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2021-12-12', 4, 'https://i.imgur.com/9BpQi2z.png', 'Foto de hamburguesa con costilla y triple cheddar', 12.00, 1, [42001-232]
+2025-05-19 09:02:24.685455+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Carne de rubia gallega acompañada con 110g de costilla de cerdo cocinada a baja temperatura durante 24 horas, triple cheddar madurado, y una combinación explosiva de salsas foodporn y BBQ. Una joya callejera.',"
+Syntax error in SQL statement "[*]'Carne de rubia gallega acompañada con 110g de costilla de cerdo cocinada a baja temperatura durante 24 horas, triple cheddar madurado, y una combinación explosiva de salsas foodporn y BBQ. Una joya callejera.',"; SQL statement:
+'Carne de rubia gallega acompañada con 110g de costilla de cerdo cocinada a baja temperatura durante 24 horas, triple cheddar madurado, y una combinación explosiva de salsas foodporn y BBQ. Una joya callejera.', [42000-232]
+2025-05-19 09:02:24.742303+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Street burguer', 'HAMBURGUESA')"
+Syntax error in SQL statement "[*]'Street burguer', 'HAMBURGUESA')"; SQL statement:
+'Street burguer', 'HAMBURGUESA') [42000-232]
+2025-05-19 09:02:24.758260+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2022-07-20', 3, 'https://i.imgur.com/olYoEVG.png', 'Foto de hamburguesa campeona de Andalucía', 17.00, 1,[*]"; se esperaba "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2022-07-20', 3, 'https://i.imgur.com/olYoEVG.png', 'Foto de hamburguesa campeona de Andalucía', 17.00, 1,[*]"; expected "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2022-07-20', 3, 'https://i.imgur.com/olYoEVG.png', 'Foto de hamburguesa campeona de Andalucía', 17.00, 1, [42001-232]
+2025-05-19 09:02:24.762249+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Inspirada en la cocina tradicional: rubia gallega dry aged, cheddar madurado, panceta ibérica y una salsa de carne cocinada lentamente durante 72 horas. Galardonada como la mejor hamburguesa de Andalucía.',"
+Syntax error in SQL statement "[*]'Inspirada en la cocina tradicional: rubia gallega dry aged, cheddar madurado, panceta ibérica y una salsa de carne cocinada lentamente durante 72 horas. Galardonada como la mejor hamburguesa de Andalucía.',"; SQL statement:
+'Inspirada en la cocina tradicional: rubia gallega dry aged, cheddar madurado, panceta ibérica y una salsa de carne cocinada lentamente durante 72 horas. Galardonada como la mejor hamburguesa de Andalucía.', [42000-232]
+2025-05-19 09:02:24.768233+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Abuela', 'HAMBURGUESA')"
+Syntax error in SQL statement "[*]'Abuela', 'HAMBURGUESA')"; SQL statement:
+'Abuela', 'HAMBURGUESA') [42000-232]
+2025-05-19 09:02:24.776212+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2023-05-16', 4, 'https://i.imgur.com/SkL6dgT.jpeg', 'Foto de hamburguesa con chistorra y huevo frito', 14.50, 1,[*]"; se esperaba "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2023-05-16', 4, 'https://i.imgur.com/SkL6dgT.jpeg', 'Foto de hamburguesa con chistorra y huevo frito', 14.50, 1,[*]"; expected "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2023-05-16', 4, 'https://i.imgur.com/SkL6dgT.jpeg', 'Foto de hamburguesa con chistorra y huevo frito', 14.50, 1, [42001-232]
+2025-05-19 09:02:24.782196+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Nuestra campeona de sabor: carne de rubia gallega con bacon ahumado crunch, doble cheddar y una sorprendente emulsión de huevo frito con chistorra. Ganadora por derecho propio.',"
+Syntax error in SQL statement "[*]'Nuestra campeona de sabor: carne de rubia gallega con bacon ahumado crunch, doble cheddar y una sorprendente emulsión de huevo frito con chistorra. Ganadora por derecho propio.',"; SQL statement:
+'Nuestra campeona de sabor: carne de rubia gallega con bacon ahumado crunch, doble cheddar y una sorprendente emulsión de huevo frito con chistorra. Ganadora por derecho propio.', [42000-232]
+2025-05-19 09:02:24.786186+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Winner23', 'HAMBURGUESA')"
+Syntax error in SQL statement "[*]'Winner23', 'HAMBURGUESA')"; SQL statement:
+'Winner23', 'HAMBURGUESA') [42000-232]
+2025-05-19 09:02:24.790174+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2025-02-15', 5, 'https://i.imgur.com/qw6KoZl.jpeg', 'Foto de burguer', 9.00, 1,[*]"; se esperaba "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2025-02-15', 5, 'https://i.imgur.com/qw6KoZl.jpeg', 'Foto de burguer', 9.00, 1,[*]"; expected "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2025-02-15', 5, 'https://i.imgur.com/qw6KoZl.jpeg', 'Foto de burguer', 9.00, 1, [42001-232]
+2025-05-19 09:02:24.795161+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Doble patty de buey gallego, acompañado de cecina premium y nuestra salsa BFP especial. Una hamburguesa intensa, jugosa y absolutamente irresistible.',"
+Syntax error in SQL statement "[*]'Doble patty de buey gallego, acompañado de cecina premium y nuestra salsa BFP especial. Una hamburguesa intensa, jugosa y absolutamente irresistible.',"; SQL statement:
+'Doble patty de buey gallego, acompañado de cecina premium y nuestra salsa BFP especial. Una hamburguesa intensa, jugosa y absolutamente irresistible.', [42000-232]
+2025-05-19 09:02:24.801145+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Tifa', 'HAMBURGUESA')"
+Syntax error in SQL statement "[*]'Tifa', 'HAMBURGUESA')"; SQL statement:
+'Tifa', 'HAMBURGUESA') [42000-232]
+2025-05-19 09:02:24.806132+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2024-01-18', 4, 'https://i.imgur.com/zUbsHpw.jpeg', 'Foto de hamburguesa vegana con base de garbanzos', 16.50, 1,[*]"; se esperaba "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2024-01-18', 4, 'https://i.imgur.com/zUbsHpw.jpeg', 'Foto de hamburguesa vegana con base de garbanzos', 16.50, 1,[*]"; expected "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES ('2024-01-18', 4, 'https://i.imgur.com/zUbsHpw.jpeg', 'Foto de hamburguesa vegana con base de garbanzos', 16.50, 1, [42001-232]
+2025-05-19 09:02:24.812116+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Nuestra opción 100% vegetal: deliciosa base de garbanzos especiada, con ingredientes frescos y una textura sorprendentemente sabrosa. Ideal para quienes buscan sabor sin carne.',"
+Syntax error in SQL statement "[*]'Nuestra opción 100% vegetal: deliciosa base de garbanzos especiada, con ingredientes frescos y una textura sorprendentemente sabrosa. Ideal para quienes buscan sabor sin carne.',"; SQL statement:
+'Nuestra opción 100% vegetal: deliciosa base de garbanzos especiada, con ingredientes frescos y una textura sorprendentemente sabrosa. Ideal para quienes buscan sabor sin carne.', [42000-232]
+2025-05-19 09:02:24.818100+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Vegana', 'HAMBURGUESA')"
+Syntax error in SQL statement "[*]'Vegana', 'HAMBURGUESA')"; SQL statement:
+'Vegana', 'HAMBURGUESA') [42000-232]
+2025-05-19 09:02:24.822089+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES [42001-232]
+2025-05-19 09:02:24.829070+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'2025-01-12', 8, 'https://i.imgur.com/5Iy9IFo.jpeg', 'Foto de bebida', 2.50, 1,"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'2025-01-12', 8, 'https://i.imgur.com/5Iy9IFo.jpeg', 'Foto de bebida', 2.50, 1,"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('2025-01-12', 8, 'https://i.imgur.com/5Iy9IFo.jpeg', 'Foto de bebida', 2.50, 1, [42001-232]
+2025-05-19 09:02:24.837050+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'La bebida más icónica del mundo, con su sabor inconfundible y burbujeante. Perfecta para acompañar cualquier plato.', 'Coca-cola', 'BEBIDA'),"
+Syntax error in SQL statement "[*]'La bebida más icónica del mundo, con su sabor inconfundible y burbujeante. Perfecta para acompañar cualquier plato.', 'Coca-cola', 'BEBIDA'),"; SQL statement:
+'La bebida más icónica del mundo, con su sabor inconfundible y burbujeante. Perfecta para acompañar cualquier plato.', 'Coca-cola', 'BEBIDA'), [42000-232]
+2025-05-19 09:02:24.842036+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'2025-01-12', 7, 'https://i.imgur.com/HpmOUu3.jpeg', 'Foto de nestle', 2.50, 1,"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'2025-01-12', 7, 'https://i.imgur.com/HpmOUu3.jpeg', 'Foto de nestle', 2.50, 1,"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('2025-01-12', 7, 'https://i.imgur.com/HpmOUu3.jpeg', 'Foto de nestle', 2.50, 1, [42001-232]
+2025-05-19 09:02:24.846025+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Refrescante té frío con un toque exótico de maracuyá. Dulce, ácido y absolutamente delicioso.', 'Te', 'BEBIDA'),"
+Syntax error in SQL statement "[*]'Refrescante té frío con un toque exótico de maracuyá. Dulce, ácido y absolutamente delicioso.', 'Te', 'BEBIDA'),"; SQL statement:
+'Refrescante té frío con un toque exótico de maracuyá. Dulce, ácido y absolutamente delicioso.', 'Te', 'BEBIDA'), [42000-232]
+2025-05-19 09:02:24.851012+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'2025-01-12', 3, 'https://i.imgur.com/2j7XedE.png', 'Foto de agua', 1.50, 1,"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'2025-01-12', 3, 'https://i.imgur.com/2j7XedE.png', 'Foto de agua', 1.50, 1,"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('2025-01-12', 3, 'https://i.imgur.com/2j7XedE.png', 'Foto de agua', 1.50, 1, [42001-232]
+2025-05-19 09:02:24.855001+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Agua mineral natural, ideal para refrescarte y acompañar una comida sin añadidos. Pura y ligera.', 'Agua', 'BEBIDA'),"
+Syntax error in SQL statement "[*]'Agua mineral natural, ideal para refrescarte y acompañar una comida sin añadidos. Pura y ligera.', 'Agua', 'BEBIDA'),"; SQL statement:
+'Agua mineral natural, ideal para refrescarte y acompañar una comida sin añadidos. Pura y ligera.', 'Agua', 'BEBIDA'), [42000-232]
+2025-05-19 09:02:24.859988+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'2025-01-12', 10, 'https://i.imgur.com/1VmC7uM.jpeg', 'Foto de cerveza', 3.50, 1,"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'2025-01-12', 10, 'https://i.imgur.com/1VmC7uM.jpeg', 'Foto de cerveza', 3.50, 1,"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('2025-01-12', 10, 'https://i.imgur.com/1VmC7uM.jpeg', 'Foto de cerveza', 3.50, 1, [42001-232]
+2025-05-19 09:02:24.860986+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Cerveza artesanal rubia, fresca y con carácter. El acompañante ideal para cualquier hamburguesa de la carta.', 'Cerveza', 'BEBIDA')"
+Syntax error in SQL statement "[*]'Cerveza artesanal rubia, fresca y con carácter. El acompañante ideal para cualquier hamburguesa de la carta.', 'Cerveza', 'BEBIDA')"; SQL statement:
+'Cerveza artesanal rubia, fresca y con carácter. El acompañante ideal para cualquier hamburguesa de la carta.', 'Cerveza', 'BEBIDA') [42000-232]
+2025-05-19 09:02:24.864975+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES [42001-232]
+2025-05-19 09:02:24.868964+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'2025-01-12', 10, 'https://i.imgur.com/u8nDHkx.jpeg', 'Foto de tarta de queso', 6.50, 1,"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'2025-01-12', 10, 'https://i.imgur.com/u8nDHkx.jpeg', 'Foto de tarta de queso', 6.50, 1,"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('2025-01-12', 10, 'https://i.imgur.com/u8nDHkx.jpeg', 'Foto de tarta de queso', 6.50, 1, [42001-232]
+2025-05-19 09:02:24.873950+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Tarta de queso payoyo horneada lentamente para lograr una textura cremosa y un sabor intenso. Una delicia para los amantes del queso.', 'Tarta de queso', 'POSTRE'),"
+Syntax error in SQL statement "[*]'Tarta de queso payoyo horneada lentamente para lograr una textura cremosa y un sabor intenso. Una delicia para los amantes del queso.', 'Tarta de queso', 'POSTRE'),"; SQL statement:
+'Tarta de queso payoyo horneada lentamente para lograr una textura cremosa y un sabor intenso. Una delicia para los amantes del queso.', 'Tarta de queso', 'POSTRE'), [42000-232]
+2025-05-19 09:02:24.875949+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'2025-01-12', 6, 'https://i.imgur.com/oxEarjm.jpeg', 'Foto de tarta de chocolate', 4.50, 1,"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'2025-01-12', 6, 'https://i.imgur.com/oxEarjm.jpeg', 'Foto de tarta de chocolate', 4.50, 1,"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('2025-01-12', 6, 'https://i.imgur.com/oxEarjm.jpeg', 'Foto de tarta de chocolate', 4.50, 1, [42001-232]
+2025-05-19 09:02:24.877940+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Irresistible tarta de tres chocolates: negro, con leche y blanco. Un postre cremoso, suave y adictivo para los más golosos.', 'Tarta de chocolate', 'POSTRE'),"
+Syntax error in SQL statement "[*]'Irresistible tarta de tres chocolates: negro, con leche y blanco. Un postre cremoso, suave y adictivo para los más golosos.', 'Tarta de chocolate', 'POSTRE'),"; SQL statement:
+'Irresistible tarta de tres chocolates: negro, con leche y blanco. Un postre cremoso, suave y adictivo para los más golosos.', 'Tarta de chocolate', 'POSTRE'), [42000-232]
+2025-05-19 09:02:24.878937+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'2025-01-12', 8, 'https://i.imgur.com/jPXD9jp.jpeg', 'Foto de torrija', 7.00, 1,"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'2025-01-12', 8, 'https://i.imgur.com/jPXD9jp.jpeg', 'Foto de torrija', 7.00, 1,"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('2025-01-12', 8, 'https://i.imgur.com/jPXD9jp.jpeg', 'Foto de torrija', 7.00, 1, [42001-232]
+2025-05-19 09:02:24.881929+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Nuestra torrija gourmet, caramelizada al punto perfecto, servida con una bola de helado de vainilla. Tradición y dulzura en cada bocado.', 'Torrija con helado', 'POSTRE')"
+Syntax error in SQL statement "[*]'Nuestra torrija gourmet, caramelizada al punto perfecto, servida con una bola de helado de vainilla. Tradición y dulzura en cada bocado.', 'Torrija con helado', 'POSTRE')"; SQL statement:
+'Nuestra torrija gourmet, caramelizada al punto perfecto, servida con una bola de helado de vainilla. Tradición y dulzura en cada bocado.', 'Torrija con helado', 'POSTRE') [42000-232]
+2025-05-19 09:02:24.892899+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO PRODUCTO (FECHA, POPULARIDAD, URL, TXT_ALTERNATIVO, PRECIO, ID_CARTA, DESCRIPCION, NOMBRE, TIPO_PRODUCTO)  VALUES [42001-232]
+2025-05-19 09:02:24.895891+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'2025-01-12', 7, 'https://i.imgur.com/lmELhrQ.jpeg', 'Foto de patatas', 4.50, 1,"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'2025-01-12', 7, 'https://i.imgur.com/lmELhrQ.jpeg', 'Foto de patatas', 4.50, 1,"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('2025-01-12', 7, 'https://i.imgur.com/lmELhrQ.jpeg', 'Foto de patatas', 4.50, 1, [42001-232]
+2025-05-19 09:02:24.900878+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Crujientes patatas bañadas en queso fundido y generosamente cubiertas con jugoso pulled pork. El entrante perfecto para compartir (o no).', 'Patatas con pulled pork', 'ENTRANTE'),"
+Syntax error in SQL statement "[*]'Crujientes patatas bañadas en queso fundido y generosamente cubiertas con jugoso pulled pork. El entrante perfecto para compartir (o no).', 'Patatas con pulled pork', 'ENTRANTE'),"; SQL statement:
+'Crujientes patatas bañadas en queso fundido y generosamente cubiertas con jugoso pulled pork. El entrante perfecto para compartir (o no).', 'Patatas con pulled pork', 'ENTRANTE'), [42000-232]
+2025-05-19 09:02:24.902873+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'2025-01-12', 6, 'https://i.imgur.com/xBpUkBW.jpeg', 'Foto de croquetas', 5.50, 1,"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'2025-01-12', 6, 'https://i.imgur.com/xBpUkBW.jpeg', 'Foto de croquetas', 5.50, 1,"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('2025-01-12', 6, 'https://i.imgur.com/xBpUkBW.jpeg', 'Foto de croquetas', 5.50, 1, [42001-232]
+2025-05-19 09:02:24.907860+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]'Deliciosas croquetas artesanas rellenas de chuletón de buey gallego, con rebozado crujiente y un interior cremoso e intenso. Un clásico reinventado.', 'Croquetas', 'ENTRANTE')"
+Syntax error in SQL statement "[*]'Deliciosas croquetas artesanas rellenas de chuletón de buey gallego, con rebozado crujiente y un interior cremoso e intenso. Un clásico reinventado.', 'Croquetas', 'ENTRANTE')"; SQL statement:
+'Deliciosas croquetas artesanas rellenas de chuletón de buey gallego, con rebozado crujiente y un interior cremoso e intenso. Un clásico reinventado.', 'Croquetas', 'ENTRANTE') [42000-232]
+2025-05-19 10:19:34.756140+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Nombre de columna Duplicada "VALORACION_PROMEDIO"
+Duplicate column name "VALORACION_PROMEDIO"; SQL statement:
+ALTER TABLE PRODUCTO ADD COLUMN valoracion_promedio DOUBLE DEFAULT 0.0 [42121-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.setColumns(Table.java:487)
+	at org.h2.table.TableBase.<init>(TableBase.java:73)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:139)
+	at org.h2.mvstore.db.Store.createTable(Store.java:216)
+	at org.h2.schema.Schema.createTable(Schema.java:797)
+	at org.h2.command.ddl.AlterTableAlterColumn.cloneTableStructure(AlterTableAlterColumn.java:457)
+	at org.h2.command.ddl.AlterTableAlterColumn.copyData(AlterTableAlterColumn.java:343)
+	at org.h2.command.ddl.AlterTableAlterColumn.update(AlterTableAlterColumn.java:244)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:139)
+	at org.h2.command.Command.executeUpdate(Command.java:304)
+	at org.h2.command.Command.executeUpdate(Command.java:248)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233)
+	at org.hibernate.tool.schema.internal.Helper.applyScript(Helper.java:255)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applyImportFiles(SchemaCreatorImpl.java:694)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applyImportSources(SchemaCreatorImpl.java:597)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:186)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:120)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:250)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.salesianostriana.dam.CasadoBayonAntonioJesus.CasadoBayonAntonioJesusApplication.main(CasadoBayonAntonioJesusApplication.java:10)
+2025-05-19 10:19:34.765108+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Nombre de columna Duplicada "NUMERO_VALORACIONES"
+Duplicate column name "NUMERO_VALORACIONES"; SQL statement:
+ALTER TABLE PRODUCTO ADD COLUMN numero_valoraciones INT DEFAULT 0 [42121-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.setColumns(Table.java:487)
+	at org.h2.table.TableBase.<init>(TableBase.java:73)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:139)
+	at org.h2.mvstore.db.Store.createTable(Store.java:216)
+	at org.h2.schema.Schema.createTable(Schema.java:797)
+	at org.h2.command.ddl.AlterTableAlterColumn.cloneTableStructure(AlterTableAlterColumn.java:457)
+	at org.h2.command.ddl.AlterTableAlterColumn.copyData(AlterTableAlterColumn.java:343)
+	at org.h2.command.ddl.AlterTableAlterColumn.update(AlterTableAlterColumn.java:244)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:139)
+	at org.h2.command.Command.executeUpdate(Command.java:304)
+	at org.h2.command.Command.executeUpdate(Command.java:248)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233)
+	at org.hibernate.tool.schema.internal.Helper.applyScript(Helper.java:255)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applyImportFiles(SchemaCreatorImpl.java:694)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applyImportSources(SchemaCreatorImpl.java:597)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:186)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:120)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:250)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.salesianostriana.dam.CasadoBayonAntonioJesus.CasadoBayonAntonioJesusApplication.main(CasadoBayonAntonioJesusApplication.java:10)

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ProductoController {
@@ -66,6 +67,9 @@ public class ProductoController {
                 break;
             case "fechaDesc":
                 model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorFechaDesc());
+                break;
+            case "popularidadDesc":
+                model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorPopularidadDesc());
                 break;
 
             default:
@@ -163,6 +167,15 @@ public class ProductoController {
         return "productosConDescuento";
     }
 
+
+    /*
+    @GetMapping("/menu2/tipo")
+    public String menuPorTipo(Model model) {
+        Map<TipoProducto, List<Producto>> productosPorTipo = productoService.listarProductosPorTipo();
+        model.addAttribute("productosPorTipo", productosPorTipo);
+        return "menu2";
+    }
+    */
 
 
 }

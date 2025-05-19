@@ -121,6 +121,19 @@ public class ProductoService {
     public List<Producto> obtenerProductosOrdenadosPorFechaDesc() {
         return productoRepository.findByFechaDesc();
     }
+    //Obtener los productos ordenados por popularidad de menor a mayor
+    public List<Producto> obtenerProductosOrdenadosPorPopularidadDesc() {return productoRepository.findByPopularidadDesc();
+    }
+
+    /*
+    public Map<TipoProducto, List<Producto>> listarProductosPorTipo() {
+        return productoRepository.findAll().stream()
+                .collect(Collectors.groupingBy(Producto::getTipoProducto));
+    }
+    */
+
+
+
 
 
 }

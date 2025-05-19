@@ -132,7 +132,7 @@ public class ProductoService {
         return productoRepository.findByPopularidadDesc();
     }
 
-
+    //Obtener los productos ordenados por tipo
     public Map<TipoProducto, List<Producto>> listarProductosPorTipo() {
         return productoRepository.findAll().stream()
                 .collect(Collectors.groupingBy(Producto::getTipoProducto));

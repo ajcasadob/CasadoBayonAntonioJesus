@@ -36,65 +36,69 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-0">
     <div class="container-fluid">
 
-      <a  class="navbar-brand" th:href="@{/#home}">
-        <img src="https://i.postimg.cc/WzQmp01V/magic.jpg"  width="60px" height="60px" alt="Magic burguers" class="rounded-circle">
-      </a>
+        <a  class="navbar-brand" th:href="@{/#home}">
+            <img src="https://i.postimg.cc/WzQmp01V/magic.jpg"  width="60px" height="60px" alt="Magic burguers" class="rounded-circle">
+        </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" th:href="@{/#home}"><i class="bi bi-house-door"></i>
-              Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" th:href="@{/#menu}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Mejor valorados</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" th:href="@{/menu2}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Menú Completo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" th:href="@{/productos/descuento}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Descuentos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" th:href="@{/#galeria}"><i class="bi bi-image"></i> Galería</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" th:href="@{/#contacto}"><i class="bi bi-telephone-inbound"></i> Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#login" data-bs-toggle="modal" data-bs-target="#loginModal"><i
-                    class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" th:href="@{/admin}"><i class="bi bi-box-arrow-in-right"></i> Administrador</a>
-          </li>
-        </ul>
-        <form class="d-flex me-3" th:action="@{/buscar}" method="get">
-          <input class="form-control me-2"
-                 type="search"
-                 name="nombre"
-                 th:value="${terminoBusqueda}"
-                 placeholder="Buscar productos..."
-                 aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">
-            <i class="bi bi-search"></i>
-          </button>
-        </form>
-      </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" aria-current="page" th:href="@{/#home}"><i class="bi bi-house-door"></i>
+                        Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{/#menu}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Mejor valorados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{/menu2/tipo}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Menú Completo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{/productos/descuento}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Descuentos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{/#galeria}"><i class="bi bi-image"></i> Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{/#contacto}"><i class="bi bi-telephone-inbound"></i> Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#login" data-bs-toggle="modal" data-bs-target="#loginModal"><i
+                            class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{/admin}"><i class="bi bi-box-arrow-in-right"></i> Administrador</a>
+                </li>
+            </ul>
+            <form class="d-flex me-3" th:action="@{/buscar}" method="get">
+                <input class="form-control me-2"
+                       type="search"
+                       name="nombre"
+                       th:value="${terminoBusqueda}"
+                       placeholder="Buscar productos..."
+                       aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+        </div>
     </div>
-  </nav>
+</nav>
 <div class="fondo-oscurecido">
 
     <section id="menu2" class="container py-5">
-
         <h2 class="text-center">Menú</h2>
-        <h4 class="text-start">Carta de productos</h4>
-
+        <div class="d-flex justify-content-between mb-4">
+            <h4 class="text-start">Carta de productos</h4>
+            <div>
+                <a th:href="@{/menu2}" class="btn btn-outline-primary me-2">Ver todos</a>
+                <a th:href="@{/menu2/tipo}" class="btn btn-outline-primary">Agrupar por tipo</a>
+            </div>
+        </div>
 
         <div class="dropdown d-flex justify-content-end mb-3">
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -106,12 +110,69 @@
                 <li><a class="dropdown-item" th:href="@{/menu2(orden='nombreAsc')}">Ordenar por Nombre</a></li>
                 <li><a class="dropdown-item" th:href="@{/menu2(orden='fechaDesc')}">Ordenar por Fecha</a></li>
                 <li><a class="dropdown-item" th:href="@{/menu2(orden='popularidadDesc')}">Ordenar por Popularidad</a></li>
-
-
             </ul>
         </div>
 
-        <div class="row text-center">
+        <!-- Vista agrupada por tipos -->
+        <div th:if="${mostrarPorTipo}">
+            <div th:each="entry : ${productosPorTipo}" class="mb-5">
+                <h3 class="mb-4 border-bottom pb-2" th:text="${entry.key}"></h3>
+                <div class="row text-center">
+                    <div th:each="producto : ${entry.value}" class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img th:src="${producto.url}" class="card-img-top" th:alt="${producto.txtAlternativo}">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${producto.nombre}"></h5>
+                                <button class="btn btn-primary" data-bs-toggle="modal"
+                                        th:data-bs-target="'#modal-' + ${producto.id}">
+                                    Ver Detalles
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Modal para cada producto -->
+                        <div class="modal fade" th:id="'modal-' + ${producto.id}" tabindex="-1"
+                             th:aria-labelledby="'modal-label-' + ${producto.id}" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" th:id="'modal-label-' + ${producto.id}"
+                                            th:text="${producto.nombre}"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <img th:src="${producto.url}" class="img-fluid rounded mb-3"
+                                                     th:alt="${producto.txtAlternativo}">
+                                            </div>
+                                            <div class="col-md-6 text-start">
+                                                <p class="h5"
+                                                   th:text="'Precio: ' + ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></p>
+                                                <p class="text-muted"
+                                                   th:text="'Fecha de creación: ' + ${#temporals.format(producto.fecha, 'dd/MM/yyyy')}"></p>
+                                                <p th:text="'Tipo: ' + ${producto.tipoProducto}"></p>
+                                                <p th:class="${producto.popularidad > 5 ? 'text-success' : 'text-warning'}"
+                                                   th:text="'Popularidad: ' + ${producto.popularidad} + '/10'"></p>
+                                                <hr>
+                                                <h6>Descripción:</h6>
+                                                <p th:text="${producto.descripcion}"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vista normal (todos los productos) -->
+        <div th:unless="${mostrarPorTipo}" class="row text-center">
             <div th:each="producto : ${productos}" class="col-md-4 mb-4">
                 <div class="card h-100">
                     <img th:src="${producto.url}" class="card-img-top" th:alt="${producto.txtAlternativo}">

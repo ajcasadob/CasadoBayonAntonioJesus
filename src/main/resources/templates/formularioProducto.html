@@ -39,59 +39,70 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-0">
         <div class="container-fluid">
-    
-          <a  class="navbar-brand" th:href="@{/#home}">
-            <img src="https://i.postimg.cc/WzQmp01V/magic.jpg"  width="60px" height="60px" alt="Magic burguers" class="rounded-circle">
-          </a>
-    
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link text-white" aria-current="page" th:href="@{/#home}"><i class="bi bi-house-door"></i>
-                  Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" th:href="@{/#menu}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Mejor valorados</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" th:href="@{/menu2}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Menú Completo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" th:href="@{/productos/descuento}"><img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG" class="pb-1" width="16px"> Descuentos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" th:href="@{/#galeria}"><i class="bi bi-image"></i> Galería</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" th:href="@{/#contacto}"><i class="bi bi-telephone-inbound"></i> Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#login" data-bs-toggle="modal" data-bs-target="#loginModal"><i
-                        class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" th:href="@{/admin}"><i class="bi bi-box-arrow-in-right"></i> Administrador</a>
-              </li>
-            </ul>
-            <form class="d-flex me-3" th:action="@{/buscar}" method="get">
-              <input class="form-control me-2"
-                     type="search"
-                     name="nombre"
-                     th:value="${terminoBusqueda}"
-                     placeholder="Buscar productos..."
-                     aria-label="Search">
-              <button class="btn btn-outline-light" type="submit">
-                <i class="bi bi-search"></i>
-              </button>
-            </form>
-          </div>
+
+            <a class="navbar-brand" th:href="@{/#home}">
+                <img src="https://i.postimg.cc/WzQmp01V/magic.jpg" width="60px" height="60px" alt="Magic burguers"
+                     class="rounded-circle">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" th:href="@{/#home}"><i
+                                class="bi bi-house-door"></i>
+                            Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/#menu}"><img
+                                th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG"
+                                class="pb-1" width="16px"> Mejor valorados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/menu2}"><img
+                                th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG"
+                                class="pb-1" width="16px"> Menú Completo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/productos/descuento}"><img
+                                th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG"
+                                class="pb-1" width="16px"> Descuentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/#galeria}"><i class="bi bi-image"></i> Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/#contacto}"><i class="bi bi-telephone-inbound"></i>
+                            Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#login" data-bs-toggle="modal"
+                           data-bs-target="#loginModal"><i
+                                class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/admin}"><i class="bi bi-box-arrow-in-right"></i>
+                            Administrador</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3" th:action="@{/buscar}" method="get">
+                    <input class="form-control me-2"
+                           type="search"
+                           name="nombre"
+                           th:value="${terminoBusqueda}"
+                           placeholder="Buscar productos..."
+                           aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+            </div>
         </div>
-      </nav>
+    </nav>
     <div class="container form-container">
 
         <h3 class="text-center my-4">Añadir Nuevo Producto</h3>
@@ -106,7 +117,7 @@
                 <div class="col-md-6">
                     <label for="tipoProducto" class="form-label">Tipo:</label>
                     <select id="tipoProducto" th:field="*{tipoProducto}" class="form-select" required>
-                        <option  value="" disabled selected>Seleccione un tipo de producto </option>
+                        <option value="" disabled selected>Seleccione un tipo de producto</option>
                         <option th:each="tipo : ${T(com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto).values()}"
                                 th:value="${tipo}" th:text="${tipo}"></option>
                     </select>
@@ -135,7 +146,8 @@
                 </div>
                 <div class="col-md-4">
                     <label for="popularidad" class="form-label">Popularidad:</label>
-                    <input type="number" id="popularidad" th:field="*{popularidad}" class="form-control" max="10" min="0" step="1"/>
+                    <input type="number" id="popularidad" th:field="*{popularidad}" class="form-control" max="10"
+                           min="0" step="1"/>
                 </div>
 
 

@@ -20,7 +20,7 @@ public class ProductoService {
     private ProductoRepository productoRepository;
 
     //Buscar un producto
-    public List<Producto> buscarPorNombre (String nombre){
+    public List<Producto> buscarPorNombre(String nombre) {
 
         return productoRepository.findByNombreContainingIgnoreCase(nombre).stream().toList();
     }
@@ -31,12 +31,13 @@ public class ProductoService {
     }
 
     //Eliminar un producto
-    public void deleteProduct(String nombre){
+    public void deleteProduct(String nombre) {
         List<Producto> productoEliminar = productoRepository.findByNombreContainingIgnoreCase(nombre);
-        if(!productoEliminar.isEmpty()){
+        if (!productoEliminar.isEmpty()) {
             productoRepository.deleteAll(productoEliminar);
         }
     }
+
     //Buscar un producto por su id
     public Producto findById(Long id) {
         return productoRepository.findById(id)
@@ -44,11 +45,12 @@ public class ProductoService {
     }
 
     //Guardar un producto
-    public void savedProduct (Producto producto){
+    public void savedProduct(Producto producto) {
 
         productoRepository.save(producto);
 
     }
+
     //Obtener los primeros cuatro productos
     public List<Producto> obtenerPrimerosCuatroProductos() {
         return productoRepository.findAll().stream().limit(4).toList();
@@ -65,6 +67,7 @@ public class ProductoService {
     public void deleteById(Long id) {
         productoRepository.deleteById(id);
     }
+
     // Recortar la descripción de los productos a 50 caracteres
     public List<Producto> obtenerTodosDescripcionReducida() {
         return productoRepository.findAll().stream()
@@ -74,8 +77,9 @@ public class ProductoService {
                 })
                 .collect(Collectors.toList());
     }
+
     //Obtener los productos con la popularidad más alta y mostar los 6
-    public List<Producto> obtenerMejorValorados(){
+    public List<Producto> obtenerMejorValorados() {
 
         return productoRepository.obtenerMejorValorados().stream()
                 .limit(6)
@@ -84,14 +88,12 @@ public class ProductoService {
     }
 
 
-
-
     //Obtener los dos últimos productos
     public List<Producto> obtenerUltimosDosProductos() {
         return productoRepository.findTop2ByOrderByFechaDesc();
     }
 
-   //Obtener los productos con popularidad menor a 5 y hacer un descuento
+    //Obtener los productos con popularidad menor a 5 y hacer un descuento
     public List<Producto> obtenerProductosConDescuento() {
         double porcentajeDescuento = 15;
         double divisor = 100;
@@ -109,20 +111,25 @@ public class ProductoService {
     public List<Producto> obtenerProductosOrdenadosPorPrecioDesc() {
         return productoRepository.findByPrecioDesc();
     }
+
     //Obtener los productos ordenados por precio de menor a mayor
     public List<Producto> obtenerProductosOrdenadosPorPrecioAsc() {
         return productoRepository.findByPrecioAsc();
     }
+
     //Obtener los productos ordenados por nombre de menor a mayor
     public List<Producto> obtenerProductosOrdenadosPorNombreAsc() {
         return productoRepository.findByNombreAsc();
     }
+
     //Obtener los productos ordenados por fecha de menor a mayor
     public List<Producto> obtenerProductosOrdenadosPorFechaDesc() {
         return productoRepository.findByFechaDesc();
     }
+
     //Obtener los productos ordenados por popularidad de menor a mayor
-    public List<Producto> obtenerProductosOrdenadosPorPopularidadDesc() {return productoRepository.findByPopularidadDesc();
+    public List<Producto> obtenerProductosOrdenadosPorPopularidadDesc() {
+        return productoRepository.findByPopularidadDesc();
     }
 
 
@@ -130,11 +137,6 @@ public class ProductoService {
         return productoRepository.findAll().stream()
                 .collect(Collectors.groupingBy(Producto::getTipoProducto));
     }
-
-
-
-
-
 
 
 }

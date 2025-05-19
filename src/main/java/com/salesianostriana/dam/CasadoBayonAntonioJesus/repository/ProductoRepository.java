@@ -9,8 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProductoRepository  extends JpaRepository <Producto, Long> {
-
+public interface ProductoRepository extends JpaRepository<Producto, Long> {
 
 
     List<Producto> findByNombreContainingIgnoreCase(String nombre);
@@ -38,10 +37,6 @@ public interface ProductoRepository  extends JpaRepository <Producto, Long> {
 
     @Query("SELECT p FROM Producto p ORDER BY p.popularidad DESC")
     List<Producto> findByPopularidadDesc();
-
-
-
-
 
 
 }

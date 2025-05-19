@@ -22,36 +22,31 @@ import java.util.Map;
 public class ProductoController {
 
     @Autowired
-    private  ProductoService productoService;
+    private ProductoService productoService;
     @Autowired
     private CartaService cartaService;
 
 
-
-
-
-
     @GetMapping("/")
-    public String inicio(Model model){
+    public String inicio(Model model) {
         List<Producto> productosGaleria = productoService.obtenerTodos();
 
 
         model.addAttribute("sobreNosostros", productoService.obtenerPrimerosCuatroProductos());
         model.addAttribute("productosGaleria", productosGaleria);
 
-        model.addAttribute("productos1",productoService.obtenerMejorValorados());
+        model.addAttribute("productos1", productoService.obtenerMejorValorados());
         model.addAttribute("productosNovedades", productoService.obtenerUltimosDosProductos());
 
         return "web";
     }
+
     @GetMapping("/menu")
-    public String menu (Model model){
+    public String menu(Model model) {
         model.addAttribute("productosValorados", productoService.obtenerMejorValorados());
 
         return "redirect:/";
     }
-
-
 
 
     @GetMapping("/menu2")
@@ -88,7 +83,6 @@ public class ProductoController {
         model.addAttribute("cartas", cartaService.findAllCartas());
 
 
-
         return "formularioProducto";
     }
 
@@ -114,7 +108,7 @@ public class ProductoController {
     }
 
     @GetMapping("/productos/editar/{idProducto}")
-    public String mostrarFormularioConProductoCargado(Model model , @PathVariable Long idProducto) {
+    public String mostrarFormularioConProductoCargado(Model model, @PathVariable Long idProducto) {
 
         model.addAttribute("producto", productoService.findById(idProducto));
 
@@ -122,10 +116,10 @@ public class ProductoController {
     }
 
     @PostMapping("/productos/editar/{idProducto}")
-    public String editarProducto( @ModelAttribute Producto producto, BindingResult result, Model model) {
+    public String editarProducto(@ModelAttribute Producto producto, BindingResult result, Model model) {
 
-        if(result.hasErrors()){
-            model.addAttribute("productos",productoService.obtenerTodos());
+        if (result.hasErrors()) {
+            model.addAttribute("productos", productoService.obtenerTodos());
             return "formularioProducto";
         }
 
@@ -135,25 +129,24 @@ public class ProductoController {
     }
 
     @GetMapping("/productos")
-    public String listarProductos(Model model){
+    public String listarProductos(Model model) {
 
         return "redirect:/";
     }
 
 
-
     @GetMapping("/buscar")
-    public String buscarProductos (String nombre, Model model){
+    public String buscarProductos(String nombre, Model model) {
         List<Producto> productos = productoService.buscarPorNombre(nombre);
-        model.addAttribute("productos",productos);
-        model.addAttribute("terminoBusqueda",nombre);
+        model.addAttribute("productos", productos);
+        model.addAttribute("terminoBusqueda", nombre);
         model.addAttribute("producto", new Producto());
         return "busqueda";
     }
 
     @GetMapping("/admin")
-    public String admin(Model model){
-        model.addAttribute("productos",productoService.obtenerTodosDescripcionReducida());
+    public String admin(Model model) {
+        model.addAttribute("productos", productoService.obtenerTodosDescripcionReducida());
         return "admin";
     }
 
@@ -162,6 +155,7 @@ public class ProductoController {
         productoService.deleteById(id);
         return "redirect:/admin";
     }
+
     @GetMapping("/productos/descuento")
     public String mostrarProductosConDescuento(Model model) {
         List<Producto> productosConDescuento = productoService.obtenerProductosConDescuento();
@@ -170,15 +164,13 @@ public class ProductoController {
     }
 
 
-
-    /*
     @GetMapping("/menu2/tipo")
     public String menuPorTipo(Model model) {
         Map<TipoProducto, List<Producto>> productosPorTipo = productoService.listarProductosPorTipo();
         model.addAttribute("productosPorTipo", productosPorTipo);
+        model.addAttribute("mostrarPorTipo", true);
         return "menu2";
     }
 
-*/
 
 }

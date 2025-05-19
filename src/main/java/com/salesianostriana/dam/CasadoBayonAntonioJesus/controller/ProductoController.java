@@ -35,6 +35,7 @@ public class ProductoController {
     public String inicio(Model model){
         List<Producto> productosGaleria = productoService.obtenerTodos();
 
+
         model.addAttribute("sobreNosostros", productoService.obtenerPrimerosCuatroProductos());
         model.addAttribute("productosGaleria", productosGaleria);
 
@@ -168,6 +169,7 @@ public class ProductoController {
     }
 
 
+
     /*
     @GetMapping("/menu2/tipo")
     public String menuPorTipo(Model model) {
@@ -175,7 +177,7 @@ public class ProductoController {
         model.addAttribute("productosPorTipo", productosPorTipo);
         return "menu2";
     }
-    */
+*/
 
 
 }

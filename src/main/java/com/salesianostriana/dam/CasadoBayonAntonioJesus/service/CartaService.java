@@ -27,4 +27,7 @@ public class CartaService {
     public Carta findCartaById(Long id) {
         return cartaRepository.findById(id).orElseThrow();
     }
+
+
+
 }

@@ -73,6 +73,7 @@ public class ProductoController {
                 model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorPopularidadDesc());
                 break;
 
+
             default:
                 model.addAttribute("productos", productoService.obtenerTodos());
                 break;
@@ -177,7 +178,7 @@ public class ProductoController {
         model.addAttribute("productosPorTipo", productosPorTipo);
         return "menu2";
     }
-*/
 
+*/
 
 }

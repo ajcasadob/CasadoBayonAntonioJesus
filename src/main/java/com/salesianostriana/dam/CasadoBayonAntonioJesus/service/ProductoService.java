@@ -125,14 +125,14 @@ public class ProductoService {
     public List<Producto> obtenerProductosOrdenadosPorPopularidadDesc() {return productoRepository.findByPopularidadDesc();
     }
 
-    /*
+
     public Map<TipoProducto, List<Producto>> listarProductosPorTipo() {
         return productoRepository.findAll().stream()
                 .collect(Collectors.groupingBy(Producto::getTipoProducto));
     }
 
 
-    */
+
 
 
 

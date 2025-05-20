@@ -162,32 +162,38 @@
                             <i class="bi bi-trash"></i>
                         </button>
                     </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="9" class="text-start fw-bold">
+                        Total de productos: <span th:text="${#lists.size(productos)}"></span>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
 
-                    <div class="modal fade" th:id="'confirmarEliminacion-' + ${producto.id}" tabindex="-1"
-                         aria-labelledby="modalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="modalLabel">Confirmar eliminación</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Cerrar"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ¿Estás seguro de que deseas eliminar el producto <span
-                                        th:text="${producto.nombre}"></span>?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar
-                                    </button>
-                                    <a th:href="@{/productos/borrar/{id}(id=${producto.id})}" class="btn btn-danger">Eliminar</a>
-                                </div>
+            <!-- Modales de confirmación de eliminación -->
+            <div th:each="producto : ${productos}">
+                <div class="modal fade" th:id="'confirmarEliminacion-' + ${producto.id}" tabindex="-1"
+                     aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalLabel">Confirmar eliminación</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                ¿Estás seguro de que deseas eliminar el producto <span th:text="${producto.nombre}"></span>?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <a th:href="@{/productos/borrar/{id}(id=${producto.id})}" class="btn btn-danger">Eliminar</a>
                             </div>
                         </div>
                     </div>
-
-                </tr>
-                </tbody>
-            </table>
+                </div>
+            </div>
         </div>
         <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
             <div class="modal-dialog">

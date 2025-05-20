@@ -22,7 +22,7 @@ import java.util.Map;
 public class ProductoController {
 
     @Autowired
-    private ProductoService productoService;
+    private  ProductoService productoService;
     @Autowired
     private CartaService cartaService;
 

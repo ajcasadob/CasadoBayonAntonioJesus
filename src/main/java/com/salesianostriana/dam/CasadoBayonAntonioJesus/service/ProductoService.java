@@ -17,7 +17,7 @@ public class ProductoService {
 
 
     @Autowired
-    private ProductoRepository productoRepository;
+    private  ProductoRepository productoRepository;
 
     //Buscar un producto
     public List<Producto> buscarPorNombre(String nombre) {

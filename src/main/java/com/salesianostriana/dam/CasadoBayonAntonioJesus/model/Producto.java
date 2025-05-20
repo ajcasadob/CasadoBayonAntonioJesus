@@ -29,6 +29,7 @@ public class Producto {
 
 
     private double precio;
+    private double precioOriginal;
 
     @Enumerated(EnumType.STRING)
     private TipoProducto tipoProducto;

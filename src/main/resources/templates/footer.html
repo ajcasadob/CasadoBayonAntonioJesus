@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>footer</title>
 
@@ -14,50 +15,56 @@
 
 
 </head>
+
 <body>
 
 
-<footer th:fragment="pie" class="text-white py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h5>Sobre Nosotros</h5>
-                <p>Somos una hamburguesería con pasión por el buen comer, ofreciendo productos frescos y deliciosos.</p>
-                <ul class="list-unstyled">
-                    <li><i class="bi bi-house-door"></i>
-                        <a th:href="@{/#sobrenosotros}" class="text-white">Quiénes somos</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h5>Enlaces Rápidos</h5>
-                <ul class="list-unstyled">
-                    <li><i class="bi bi-house-door"></i>
-                        <a th:href="@{/#home}" class="text-white">Inicio</a>
-                    </li>
-                    <li>
-                        <img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Menú" class="pb-1" width="16px">
-                        <a th:href="@{/menu2}" class="text-white">Menú</a>
-                    </li>
-                    <li><i class="bi bi-telephone-inbound"></i>
-                        <a th:href="@{/#contacto}" class="text-white">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h5>Redes Sociales</h5>
-                <ul class="list-unstyled">
-                    <li><i class="bi bi-facebook"></i>
-                        <a href="https://www.facebook.com/?locale=es_ES" class="text-white">Facebook</a></li>
-                    <li><i class="bi bi-instagram"></i>
-                        <a href="https://www.instagram.com/burgerfoodprn/?hl=es" class="text-white">Instagram</a></li>
-                    <li><i class="bi bi-twitter-x"></i>
-                        <a href="https://x.com/?lang=es" class="text-white">Twitter</a></li>
-                </ul>
+    <footer th:fragment="pie" class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Sobre Nosotros</h5>
+                    <p>Somos una hamburguesería con pasión por el buen comer, ofreciendo productos frescos y deliciosos.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-house-door"></i>
+                            <a th:href="@{/#sobrenosotros}" class="text-white">Quiénes somos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-house-door"></i>
+                            <a th:href="@{/#home}" class="text-white">Inicio</a>
+                        </li>
+                        <li>
+                            <img th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Menú" class="pb-1"
+                                width="16px">
+                            <a th:href="@{/menu2}" class="text-white">Menú</a>
+                        </li>
+                        <li><i class="bi bi-telephone-inbound"></i>
+                            <a th:href="@{/#contacto}" class="text-white">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-facebook"></i>
+                            <a href="https://www.facebook.com/?locale=es_ES" class="text-white">Facebook</a>
+                        </li>
+                        <li><i class="bi bi-instagram"></i>
+                            <a href="https://www.instagram.com/burgerfoodprn/?hl=es" class="text-white">Instagram</a>
+                        </li>
+                        <li><i class="bi bi-twitter-x"></i>
+                            <a href="https://x.com/?lang=es" class="text-white">Twitter</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
 
 </html>

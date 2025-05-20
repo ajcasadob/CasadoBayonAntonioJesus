@@ -141,11 +141,11 @@ public class ProductoService {
     }
     //Obtener los productos con descuento
     public List<Producto> obtenerProductosConDescuento() {
-        return productoRepository.findAll()
-                .stream()
-                .filter(Producto::isConDescuento)
+        return productoRepository.findAll().stream()
+                .filter(p -> p.isConDescuento() && p.getPrecio() < p.getPrecioOriginal())
                 .toList();
     }
+
 
 
 

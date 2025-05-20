@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,14 +16,14 @@
     <style>
         body {
 
-          background-image: url([[@{/img/pattern.jpg}]]);
-          background-repeat: repeat;
-          background-size: auto;
+            background-image: url([[@{/img/pattern.jpg}]]);
+            background-repeat: repeat;
+            background-size: auto;
 
         }
 
         .fondo-oscurecido {
-          background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(0, 0, 0, 0.85);
 
 
         }
@@ -30,275 +31,273 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100 ">
-<div class="fondo-oscurecido min-vh-100">
-    <header class="position-relative">
-        <img src="https://i.imgur.com/LAJg0hn.png" class="img-fluid w-100" alt="Banner Magic's Burger">
-        <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
-            <h1 class="display-4 fw-bold">Bienvenido a Magic's Burger</h1>
-            <p class="lead">La magia del sabor en cada bocado</p>
-        </div>
-    </header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-0">
-        <div class="container-fluid">
-
-            <a class="navbar-brand" th:href="@{/#home}">
-                <img src="https://i.postimg.cc/WzQmp01V/magic.jpg" width="60px" height="60px" alt="Magic burguers"
-                     class="rounded-circle">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" th:href="@{/#home}"><i
-                                class="bi bi-house-door"></i>
-                            Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" th:href="@{/#menu}"><img
-                                th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG"
-                                class="pb-1" width="16px"> Mejor valorados</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" th:href="@{/menu2}"><img
-                                th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG"
-                                class="pb-1" width="16px"> Menú Completo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" th:href="@{/productos/descuento}"><img
-                                th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG"
-                                class="pb-1" width="16px"> Promociones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" th:href="@{/#galeria}"><i class="bi bi-image"></i> Galería</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" th:href="@{/#contacto}"><i class="bi bi-telephone-inbound"></i>
-                            Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#login" data-bs-toggle="modal"
-                           data-bs-target="#loginModal"><i
-                                class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" th:href="@{/admin}"><i class="bi bi-box-arrow-in-right"></i>
-                            Administrador</a>
-                    </li>
-                </ul>
-                <form class="d-flex me-3" th:action="@{/buscar}" method="get">
-                    <input class="form-control me-2"
-                           type="search"
-                           name="nombre"
-                           th:value="${terminoBusqueda}"
-                           placeholder="Buscar productos..."
-                           aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">
-                        <i class="bi bi-search"></i>
-                    </button>
-                </form>
+    <div class="fondo-oscurecido min-vh-100">
+        <header class="position-relative">
+            <img src="https://i.imgur.com/LAJg0hn.png" class="img-fluid w-100" alt="Banner Magic's Burger">
+            <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+                <h1 class="display-4 fw-bold">Bienvenido a Magic's Burger</h1>
+                <p class="lead">La magia del sabor en cada bocado</p>
             </div>
-        </div>
-    </nav>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-0">
+            <div class="container-fluid">
 
-    <!-- Mostar resultado -->
-    <section id="resultados-busqueda" class="container py-4" th:if="${productos != null}">
+                <a class="navbar-brand" th:href="@{/#home}">
+                    <img src="https://i.postimg.cc/WzQmp01V/magic.jpg" width="60px" height="60px" alt="Magic burguers"
+                        class="rounded-circle">
+                </a>
 
-        <div th:if="${!productos.isEmpty()}">
-            <h3 class="mb-4">Resultados para: "<span th:text="${terminoBusqueda}"></span>"</h3>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="row">
-                <div class="col-md-4 mb-4" th:each="producto : ${productos}">
-                    <div class="card h-100  text-white">
-                        <span class="badge bg-danger position-absolute top-0 start-0 m-2"
-                              th:if="${producto.conDescuento}">Promoción</span>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" th:href="@{/#home}"><i
+                                    class="bi bi-house-door"></i>
+                                Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{/#menu}"><img
+                                    th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG"
+                                    class="pb-1" width="16px"> Mejor valorados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{/menu2}"><img
+                                    th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG"
+                                    class="pb-1" width="16px"> Menú Completo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{/productos/descuento}"><img
+                                    th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG"
+                                    class="pb-1" width="16px"> Promociones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{/#galeria}"><i class="bi bi-image"></i>
+                                Galería</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{/#contacto}"><i
+                                    class="bi bi-telephone-inbound"></i>
+                                Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#login" data-bs-toggle="modal"
+                                data-bs-target="#loginModal"><i class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{/admin}"><i class="bi bi-box-arrow-in-right"></i>
+                                Administrador</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-3" th:action="@{/buscar}" method="get">
+                        <input class="form-control me-2" type="search" name="nombre" th:value="${terminoBusqueda}"
+                            placeholder="Buscar productos..." aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
 
-                        <img th:src="${producto.url}" class="card-img-top" th:alt="${producto.txtAlternativo}">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${producto.nombre}"></h5>
+        <!-- Mostar resultado -->
+        <section id="resultados-busqueda" class="container py-4" th:if="${productos != null}">
 
-                            <p class="card-text" th:text="${producto.descripcion}"></p>
-                            <p class="text-warning" th:text="'Fecha de creación: ' + ${producto.fecha}"></p>
-                            <p class="text-warning" th:text="'Tipo: ' + ${producto.tipoProducto}"></p>
-                            <p th:class="${producto.popularidad > 5 ? 'text-success' : 'text-warning'}"
-                               th:text="'Popularidad: ' + ${producto.popularidad} + '/10'"></p>
-                            <p class="h5" th:if="${producto.conDescuento}">
-                                                        <span class="text-danger text-decoration-line-through me-2"
-                                                              th:text="'Precio: ' + ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></span>
-                                <span class="text-success fw-bold"
-                                      th:text="'Nuevo: ' + ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
-                            </p>
+            <div th:if="${!productos.isEmpty()}">
+                <h3 class="mb-4">Resultados para: "<span th:text="${terminoBusqueda}"></span>"</h3>
 
-                            <!-- Si no tiene descuento -->
-                            <p class="h5" th:unless="${producto.conDescuento}"
-                               th:text="' Precio: '  +  ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'">
-                            </p>
+                <div class="row">
+                    <div class="col-md-4 mb-4" th:each="producto : ${productos}">
+                        <div class="card h-100  text-white">
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2"
+                                th:if="${producto.conDescuento}">Promoción</span>
+
+                            <img th:src="${producto.url}" class="card-img-top" th:alt="${producto.txtAlternativo}">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${producto.nombre}"></h5>
+
+                                <p class="card-text" th:text="${producto.descripcion}"></p>
+                                <p class="text-warning" th:text="'Fecha de creación: ' + ${producto.fecha}"></p>
+                                <p class="text-warning" th:text="'Tipo: ' + ${producto.tipoProducto}"></p>
+                                <p th:class="${producto.popularidad > 5 ? 'text-success' : 'text-warning'}"
+                                    th:text="'Popularidad: ' + ${producto.popularidad} + '/10'"></p>
+                                <p class="h5"
+                                    th:if="${producto.conDescuento and producto.precio < producto.precioOriginal}">
+                                    <span class="text-danger text-decoration-line-through me-2"
+                                        th:text="'Precio: '+ ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></span>
+                                    <span class="text-success fw-bold"
+                                        th:text="'Ahora: '+ ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
+                                </p>
+
+                                <!-- Mostrar solo el precio original si no hay descuento real -->
+                                <p class="h5"
+                                    th:unless="${producto.conDescuento and producto.precio < producto.precioOriginal}"
+                                    th:text="${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></p>
 
 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div th:if="${productos.isEmpty()}" class="alert alert-warning text-center">
-            No se encontraron resultados para: "<span th:text="${terminoBusqueda}"></span>"
-        </div>
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="#" action="#">
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="username" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-                            <button class=" btn btn-primary " type="button" data-bs-toggle="modal"
+            <div th:if="${productos.isEmpty()}" class="alert alert-warning text-center">
+                No se encontraron resultados para: "<span th:text="${terminoBusqueda}"></span>"
+            </div>
+            <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="#" action="#">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Usuario</label>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                                <button class=" btn btn-primary " type="button" data-bs-toggle="modal"
                                     data-bs-target="#myModal">
-                                Crear cuenta
-                            </button>
-                        </form>
+                                    Crear cuenta
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content bg-light">
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-light">
 
-                    <div class="modal-header">
-                        <h4 class="modal-title">Creación de cuenta</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Creación de cuenta</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
 
-                    <div class="modal-body">
+                        <div class="modal-body">
 
-                        <form action="#" method="#" class="mt-0">
+                            <form action="#" method="#" class="mt-0">
 
-                            <div class="container-fluid">
+                                <div class="container-fluid">
 
-                                <div class="row">
-                                    <div class="mb-1 col-12 col-md-5">
-                                        <label for="name" class="form-label">Nombre:</label>
-                                        <input type="text" class="form-control p-2" required id="name" name="name">
+                                    <div class="row">
+                                        <div class="mb-1 col-12 col-md-5">
+                                            <label for="name" class="form-label">Nombre:</label>
+                                            <input type="text" class="form-control p-2" required id="name" name="name">
+                                        </div>
+
+                                        <div class="mb-1 col-12 col-md-7">
+                                            <label for="surname" class="form-label">Apellidos:</label>
+                                            <input type="text" class="form-control p-2" id="surname" required
+                                                name="surname">
+                                        </div>
                                     </div>
 
-                                    <div class="mb-1 col-12 col-md-7">
-                                        <label for="surname" class="form-label">Apellidos:</label>
-                                        <input type="text" class="form-control p-2" id="surname" required name="surname">
+                                    <div class="row">
+                                        <div class="mb-1 col-12 col-md-8">
+                                            <label for="home" class="form-label">Domicilio:</label>
+                                            <input type="text" class="form-control p-2" id="home" required
+                                                placeholder="Nº XXX C/ XXX" name="home">
+                                        </div>
+
+                                        <div class="mb-1 col-12 col-md-4">
+                                            <label for="city" class="form-label">Localidad:</label>
+                                            <input type="text" class="form-control p-2" id="city" name="city">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="mb-1 col-12">
+                                            <label for="email" class="form-label">Email:</label>
+                                            <input type="email" class="form-control p-2" required id="email"
+                                                placeholder="correo@email.com" name="email">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="mb-1 col-12 col-md-6">
+                                            <label for="pwd" class="form-label">Contraseña:</label>
+                                            <input type="password" class="form-control p-2" id="pwd" required
+                                                placeholder="************" name="pswd">
+                                        </div>
+
+                                        <div class="mb-1 col-12 col-md-6">
+                                            <label for="pwd2" class="form-label">Repetir contraseña:</label>
+                                            <input type="password" class="form-control p-2" id="pwd2" required
+                                                placeholder="************" name="pswd2">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <label class="form-label">Sexo:</label>
+
+                                        <div class="form-check mb-1 col-12 col-md-3">
+                                            <label class="form-check-label" for="hombre">
+                                                <input class="form-check-input" id="hombre" type="radio" name="sex"
+                                                    value="H">
+                                                Hombre
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check mb-1 col-12 col-md-3">
+                                            <label class="form-check-label" for="mujer">
+                                                <input class="form-check-input" type="radio" id="mujer" name="sex"
+                                                    value="M">
+                                                Mujer
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check mb-1 col-12 col-md-5">
+                                            <label class="form-check-label" for="noindicado">
+                                                <input class="form-check-input" type="radio" id="noindicado" name="sex"
+                                                    value="N"> No especificado
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="my-1">
+                                            <label for="comment">Observaciones:</label>
+                                            <textarea class="form-control" rows="2" id="comment" name="text"
+                                                placeholder="Escriba aquí..."></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button type="reset" class=" btn btn-primary ">Limpiar
+                                                formulario
+                                            </button>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <button type=" submit" class=" btn btn-primary "
+                                                data-bs-dismiss="modal">Crear
+                                                cuenta
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="mb-1 col-12 col-md-8">
-                                        <label for="home" class="form-label">Domicilio:</label>
-                                        <input type="text" class="form-control p-2" id="home" required
-                                               placeholder="Nº XXX C/ XXX"
-                                               name="home">
-                                    </div>
-
-                                    <div class="mb-1 col-12 col-md-4">
-                                        <label for="city" class="form-label">Localidad:</label>
-                                        <input type="text" class="form-control p-2" id="city" name="city">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="mb-1 col-12">
-                                        <label for="email" class="form-label">Email:</label>
-                                        <input type="email" class="form-control p-2" required id="email"
-                                               placeholder="correo@email.com"
-                                               name="email">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="mb-1 col-12 col-md-6">
-                                        <label for="pwd" class="form-label">Contraseña:</label>
-                                        <input type="password" class="form-control p-2" id="pwd" required
-                                               placeholder="************"
-                                               name="pswd">
-                                    </div>
-
-                                    <div class="mb-1 col-12 col-md-6">
-                                        <label for="pwd2" class="form-label">Repetir contraseña:</label>
-                                        <input type="password" class="form-control p-2" id="pwd2" required
-                                               placeholder="************"
-                                               name="pswd2">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <label class="form-label">Sexo:</label>
-
-                                    <div class="form-check mb-1 col-12 col-md-3">
-                                        <label class="form-check-label" for="hombre">
-                                            <input class="form-check-input" id="hombre" type="radio" name="sex" value="H">
-                                            Hombre
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check mb-1 col-12 col-md-3">
-                                        <label class="form-check-label" for="mujer">
-                                            <input class="form-check-input" type="radio" id="mujer" name="sex" value="M">
-                                            Mujer
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check mb-1 col-12 col-md-5">
-                                        <label class="form-check-label" for="noindicado">
-                                            <input class="form-check-input" type="radio" id="noindicado" name="sex"
-                                                   value="N"> No especificado
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="my-1">
-                                        <label for="comment">Observaciones:</label>
-                                        <textarea class="form-control" rows="2" id="comment" name="text"
-                                                  placeholder="Escriba aquí..."></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-6">
-                                        <button type="reset" class=" btn btn-primary ">Limpiar
-                                            formulario
-                                        </button>
-                                    </div>
-
-                                    <div class="col-6">
-                                        <button type=" submit" class=" btn btn-primary " data-bs-dismiss="modal">Crear
-                                            cuenta
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer th:replace="~{footer :: pie}" class=" text-white py-5">
+        <footer th:replace="~{footer :: pie}" class=" text-white py-5">
 
-    </footer>
-</div>
+        </footer>
+    </div>
 </body>
 
 </html>

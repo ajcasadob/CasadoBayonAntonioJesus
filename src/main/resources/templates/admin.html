@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Menu de administrador</title>
     <meta charset="utf-8">
@@ -29,293 +30,310 @@
         }
     </style>
 </head>
+
 <body>
-<div class="fondo-oscurecido min-vh-100">
-    <header class="position-relative">
-        <img src="https://i.imgur.com/LAJg0hn.png" class="img-fluid w-100" alt="Banner Magic's Burger">
-        <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
-            <h1 class="display-4 fw-bold">Bienvenido a Magic's Burger</h1>
-            <p class="lead">La magia del sabor en cada bocado</p>
-        </div>
-    </header>
+    <div class="fondo-oscurecido min-vh-100">
+        <header class="position-relative">
+            <img src="https://i.imgur.com/LAJg0hn.png" class="img-fluid w-100" alt="Banner Magic's Burger">
+            <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+                <h1 class="display-4 fw-bold">Bienvenido a Magic's Burger</h1>
+                <p class="lead">La magia del sabor en cada bocado</p>
+            </div>
+        </header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-0">
-        <div class="container-fluid">
-            <a class="navbar-brand" th:href="@{/#home}">
-                <img src="https://i.postimg.cc/WzQmp01V/magic.jpg" width="60px" height="60px" alt="Magic burguers"
-                     class="rounded-circle">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-0">
+            <div class="container-fluid">
+                <a class="navbar-brand" th:href="@{/#home}">
+                    <img src="https://i.postimg.cc/WzQmp01V/magic.jpg" width="60px" height="60px" alt="Magic burguers"
+                        class="rounded-circle">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-white" th:href="@{/#home}"><i class="bi bi-house-door"></i> Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" th:href="@{/#menu}">Mejor valorados</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" th:href="@{/menu2}">Menú Completo</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" th:href="@{/productos/descuento}">Promociones</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" th:href="@{/#galeria}"><i class="bi bi-image"></i> Galería</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" th:href="@{/#contacto}"><i class="bi bi-telephone-inbound"></i> Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#login" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" th:href="@{/admin}"><i class="bi bi-box-arrow-in-right"></i> Administrador</a></li>
-                </ul>
-                <form class="d-flex me-3" th:action="@{/buscar}" method="get">
-                    <input class="form-control me-2" type="search" name="nombre" th:value="${terminoBusqueda}" placeholder="Buscar productos...">
-                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-                </form>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link text-white" th:href="@{/#home}"><i
+                                    class="bi bi-house-door"></i> Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" th:href="@{/#menu}">Mejor valorados</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" th:href="@{/menu2}">Menú Completo</a></li>
+                        <li class="nav-item"><a class="nav-link text-white"
+                                th:href="@{/productos/descuento}">Promociones</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" th:href="@{/#galeria}"><i
+                                    class="bi bi-image"></i> Galería</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" th:href="@{/#contacto}"><i
+                                    class="bi bi-telephone-inbound"></i> Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#login" data-bs-toggle="modal"
+                                data-bs-target="#loginModal"><i class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link text-white" th:href="@{/admin}"><i
+                                    class="bi bi-box-arrow-in-right"></i> Administrador</a></li>
+                    </ul>
+                    <form class="d-flex me-3" th:action="@{/buscar}" method="get">
+                        <input class="form-control me-2" type="search" name="nombre" th:value="${terminoBusqueda}"
+                            placeholder="Buscar productos...">
+                        <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <section>
-        <h3 class="text-center mt-3">Menú de administrador</h3>
+        <section>
+            <h3 class="text-center mt-3">Menú de administrador</h3>
 
-        <div class="table-responsive w-75 mx-auto">
-            <div class="d-flex justify-content-between align-items-center">
-                <h4 class="my-3">Listado de productos</h4>
-                <a href="/productos/nuevo" class="btn btn-success mb-3">Añadir producto</a>
-            </div>
+            <div class="table-responsive w-75 mx-auto">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="my-3">Listado de productos</h4>
+                    <a href="/productos/nuevo" class="btn btn-success mb-3">Añadir producto</a>
+                </div>
 
-            <table class="table table-striped table-responsive table-bordered mx-auto">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Imagen</th>
-                    <th>Nombre</th>
-                    <th>Precio con descuento</th>
-                    <th>Precio Original</th>
-                    <th>Fecha de Creación</th>
-                    <th>Popularidad</th>
-                    <th>Descripción</th>
-                    <th>Tipo de producto</th>
-                    <th>Opciones</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="producto : ${productos}">
-                    <td th:text="${producto.id}"></td>
-                    <td><img th:src="${producto.url}" th:alt="${producto.txtAlternativo}" class="img-thumbnail img-50"></td>
-                    <td th:text="${producto.nombre}"></td>
-                    <td th:text="${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></td>
-                    <td th:text="${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></td>
-                    <td th:text="${#temporals.format(producto.fecha, 'dd/MM/yyyy')}"></td>
-                    <td th:text="${producto.popularidad}"></td>
-                    <td th:text="${producto.descripcion}"></td>
-                    <td th:text="${#strings.capitalize(#strings.toLowerCase(producto.tipoProducto))}"></td>
-                    <td>
-                        <div class="d-flex flex-column gap-1">
-                            <a th:href="@{/productos/editar/{id}(id=${producto.id})}" class="btn btn-primary btn-sm">
-                                <i class="bi bi-pencil-square"></i> Editar
-                            </a>
+                <table class="table table-striped table-responsive table-bordered mx-auto">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio con descuento</th>
+                            <th>Precio Original</th>
+                            <th>Fecha de Creación</th>
+                            <th>Popularidad</th>
+                            <th>Descripción</th>
+                            <th>Tipo de producto</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="producto : ${productos}">
+                            <td th:text="${producto.id}"></td>
+                            <td><img th:src="${producto.url}" th:alt="${producto.txtAlternativo}"
+                                    class="img-thumbnail img-50"></td>
+                            <td th:text="${producto.nombre}"></td>
+                            <td th:text="${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></td>
+                            <td th:text="${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></td>
+                            <td th:text="${#temporals.format(producto.fecha, 'dd/MM/yyyy')}"></td>
+                            <td th:text="${producto.popularidad}"></td>
+                            <td th:text="${producto.descripcion}"></td>
+                            <td th:text="${#strings.capitalize(#strings.toLowerCase(producto.tipoProducto))}"></td>
+                            <td>
+                                <div class="d-flex flex-column gap-1">
+                                    <a th:href="@{/productos/editar/{id}(id=${producto.id})}"
+                                        class="btn btn-primary btn-sm">
+                                        <i class="bi bi-pencil-square"></i> Editar
+                                    </a>
 
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                    th:data-bs-target="'#confirmarEliminacion-' + ${producto.id}">
-                                <i class="bi bi-trash"></i> Eliminar
-                            </button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                        th:data-bs-target="'#confirmarEliminacion-' + ${producto.id}">
+                                        <i class="bi bi-trash"></i> Eliminar
+                                    </button>
 
-                            <form th:action="@{/descuento}" method="post" class="d-flex mt-2">
-                                <input type="hidden" name="productoId" th:value="${producto.id}" />
-                                <input type="number" name="porcentajeDescuento" placeholder="%" min="0" max="100" step="0.01"
-                                       class="form-control form-control-sm me-1" required />
-                                <button type="submit" class="btn btn-warning btn-sm">
-                                    <i class="bi bi-percent"></i> Aplicar
-                                </button>
-                            </form>
+                                    <form th:action="@{/descuento}" method="post" class="d-flex mt-2">
+                                        <input type="hidden" name="productoId" th:value="${producto.id}" />
+                                        <input type="number" name="porcentajeDescuento" placeholder="%" min="0"
+                                            max="100" step="0.01" class="form-control form-control-sm me-1" required />
+                                        <button type="submit" class="btn btn-warning btn-sm">
+                                            <i class="bi bi-percent"></i> Aplicar
+                                        </button>
+                                    </form>
 
-                            <form th:if="${producto.conDescuento}" th:action="@{/quitar-descuento}" method="post" class="mt-1">
-                                <input type="hidden" name="productoId" th:value="${producto.id}" />
-                                <button type="submit" class="btn btn-secondary btn-sm ">
-                                    <i class="bi bi-arrow-counterclockwise"></i> Quitar descuento
-                                </button>
-                            </form>
+                                    <form th:if="${producto.conDescuento}" th:action="@{/quitar-descuento}"
+                                        method="post" class="mt-1">
+                                        <input type="hidden" name="productoId" th:value="${producto.id}" />
+                                        <button type="submit" class="btn btn-secondary btn-sm ">
+                                            <i class="bi bi-arrow-counterclockwise"></i> Quitar descuento
+                                        </button>
+                                    </form>
 
-                        </div>
-                    </td>
+                                </div>
+                            </td>
 
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                    <td colspan="10" class="text-start fw-bold">
-                        Total de productos: <span th:text="${#lists.size(productos)}"></span>
-                    </td>
-                </tr>
-                </tfoot>
-            </table>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="10" class="text-start fw-bold">
+                                Total de productos: <span th:text="${#lists.size(productos)}"></span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
 
-            <!-- Modales de eliminación -->
-            <div th:each="producto : ${productos}">
-                <div class="modal fade" th:id="'confirmarEliminacion-' + ${producto.id}" tabindex="-1"
-                     aria-labelledby="modalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalLabel">Confirmar eliminación</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                            </div>
-                            <div class="modal-body">
-                                ¿Estás seguro de que deseas eliminar el producto <span th:text="${producto.nombre}"></span>?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <a th:href="@{/productos/borrar/{id}(id=${producto.id})}" class="btn btn-danger">Eliminar</a>
+                <!-- Modales de eliminación -->
+                <div th:each="producto : ${productos}">
+                    <div class="modal fade" th:id="'confirmarEliminacion-' + ${producto.id}" tabindex="-1"
+                        aria-labelledby="modalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">Confirmar eliminación</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Cerrar"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Estás seguro de que deseas eliminar el producto <span
+                                        th:text="${producto.nombre}"></span>?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <a th:href="@{/productos/borrar/{id}(id=${producto.id})}"
+                                        class="btn btn-danger">Eliminar</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="#" action="#">
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="username" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-                            <button class=" btn btn-primary " type="button" data-bs-toggle="modal"
+            <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="#" action="#">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Usuario</label>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                                <button class=" btn btn-primary " type="button" data-bs-toggle="modal"
                                     data-bs-target="#myModal">
-                                Crear cuenta
-                            </button>
-                        </form>
+                                    Crear cuenta
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content bg-light">
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-light">
 
-                    <div class="modal-header">
-                        <h4 class="modal-title">Creación de cuenta</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Creación de cuenta</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
 
-                    <div class="modal-body">
+                        <div class="modal-body">
 
-                        <form action="#" method="#" class="mt-0">
+                            <form action="#" method="#" class="mt-0">
 
-                            <div class="container-fluid">
+                                <div class="container-fluid">
 
-                                <div class="row">
-                                    <div class="mb-1 col-12 col-md-5">
-                                        <label for="name" class="form-label">Nombre:</label>
-                                        <input type="text" class="form-control p-2" required id="name" name="name">
+                                    <div class="row">
+                                        <div class="mb-1 col-12 col-md-5">
+                                            <label for="name" class="form-label">Nombre:</label>
+                                            <input type="text" class="form-control p-2" required id="name" name="name">
+                                        </div>
+
+                                        <div class="mb-1 col-12 col-md-7">
+                                            <label for="surname" class="form-label">Apellidos:</label>
+                                            <input type="text" class="form-control p-2" id="surname" required
+                                                name="surname">
+                                        </div>
                                     </div>
 
-                                    <div class="mb-1 col-12 col-md-7">
-                                        <label for="surname" class="form-label">Apellidos:</label>
-                                        <input type="text" class="form-control p-2" id="surname" required name="surname">
+                                    <div class="row">
+                                        <div class="mb-1 col-12 col-md-8">
+                                            <label for="home" class="form-label">Domicilio:</label>
+                                            <input type="text" class="form-control p-2" id="home" required
+                                                placeholder="Nº XXX C/ XXX" name="home">
+                                        </div>
+
+                                        <div class="mb-1 col-12 col-md-4">
+                                            <label for="city" class="form-label">Localidad:</label>
+                                            <input type="text" class="form-control p-2" id="city" name="city">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="mb-1 col-12">
+                                            <label for="email" class="form-label">Email:</label>
+                                            <input type="email" class="form-control p-2" required id="email"
+                                                placeholder="correo@email.com" name="email">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="mb-1 col-12 col-md-6">
+                                            <label for="pwd" class="form-label">Contraseña:</label>
+                                            <input type="password" class="form-control p-2" id="pwd" required
+                                                placeholder="************" name="pswd">
+                                        </div>
+
+                                        <div class="mb-1 col-12 col-md-6">
+                                            <label for="pwd2" class="form-label">Repetir contraseña:</label>
+                                            <input type="password" class="form-control p-2" id="pwd2" required
+                                                placeholder="************" name="pswd2">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <label class="form-label">Sexo:</label>
+
+                                        <div class="form-check mb-1 col-12 col-md-3">
+                                            <label class="form-check-label" for="hombre">
+                                                <input class="form-check-input" id="hombre" type="radio" name="sex"
+                                                    value="H">
+                                                Hombre
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check mb-1 col-12 col-md-3">
+                                            <label class="form-check-label" for="mujer">
+                                                <input class="form-check-input" type="radio" id="mujer" name="sex"
+                                                    value="M">
+                                                Mujer
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check mb-1 col-12 col-md-5">
+                                            <label class="form-check-label" for="noindicado">
+                                                <input class="form-check-input" type="radio" id="noindicado" name="sex"
+                                                    value="N"> No especificado
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="my-1">
+                                            <label for="comment">Observaciones:</label>
+                                            <textarea class="form-control" rows="2" id="comment" name="text"
+                                                placeholder="Escriba aquí..."></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button type="reset" class=" btn btn-primary ">Limpiar
+                                                formulario
+                                            </button>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <button type=" submit" class=" btn btn-primary "
+                                                data-bs-dismiss="modal">Crear
+                                                cuenta
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="mb-1 col-12 col-md-8">
-                                        <label for="home" class="form-label">Domicilio:</label>
-                                        <input type="text" class="form-control p-2" id="home" required
-                                               placeholder="Nº XXX C/ XXX"
-                                               name="home">
-                                    </div>
-
-                                    <div class="mb-1 col-12 col-md-4">
-                                        <label for="city" class="form-label">Localidad:</label>
-                                        <input type="text" class="form-control p-2" id="city" name="city">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="mb-1 col-12">
-                                        <label for="email" class="form-label">Email:</label>
-                                        <input type="email" class="form-control p-2" required id="email"
-                                               placeholder="correo@email.com"
-                                               name="email">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="mb-1 col-12 col-md-6">
-                                        <label for="pwd" class="form-label">Contraseña:</label>
-                                        <input type="password" class="form-control p-2" id="pwd" required
-                                               placeholder="************"
-                                               name="pswd">
-                                    </div>
-
-                                    <div class="mb-1 col-12 col-md-6">
-                                        <label for="pwd2" class="form-label">Repetir contraseña:</label>
-                                        <input type="password" class="form-control p-2" id="pwd2" required
-                                               placeholder="************"
-                                               name="pswd2">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <label class="form-label">Sexo:</label>
-
-                                    <div class="form-check mb-1 col-12 col-md-3">
-                                        <label class="form-check-label" for="hombre">
-                                            <input class="form-check-input" id="hombre" type="radio" name="sex" value="H">
-                                            Hombre
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check mb-1 col-12 col-md-3">
-                                        <label class="form-check-label" for="mujer">
-                                            <input class="form-check-input" type="radio" id="mujer" name="sex" value="M">
-                                            Mujer
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check mb-1 col-12 col-md-5">
-                                        <label class="form-check-label" for="noindicado">
-                                            <input class="form-check-input" type="radio" id="noindicado" name="sex"
-                                                   value="N"> No especificado
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="my-1">
-                                        <label for="comment">Observaciones:</label>
-                                        <textarea class="form-control" rows="2" id="comment" name="text"
-                                                  placeholder="Escriba aquí..."></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-6">
-                                        <button type="reset" class=" btn btn-primary ">Limpiar
-                                            formulario
-                                        </button>
-                                    </div>
-
-                                    <div class="col-6">
-                                        <button type=" submit" class=" btn btn-primary " data-bs-dismiss="modal">Crear
-                                            cuenta
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-    </section>
+        </section>
 
-    <footer th:replace="~{footer :: pie}" class="text-white py-5"></footer>
-</div>
+        <footer th:replace="~{footer :: pie}" class="text-white py-5"></footer>
+    </div>
 </body>
+
 </html>

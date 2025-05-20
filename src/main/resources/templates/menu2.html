@@ -134,7 +134,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title" th:text="${producto.nombre}"></h5>
                                     <span class="badge bg-danger position-absolute top-0 start-0 m-2"
-                                          th:if="${producto.conDescuento}">Promoción</span>
+                                        th:if="${producto.conDescuento}">Promoción</span>
                                     <button class="btn btn-primary" data-bs-toggle="modal"
                                         th:data-bs-target="'#modal-' + ${producto.id}">
                                         Ver Detalles
@@ -160,16 +160,18 @@
                                                         th:alt="${producto.txtAlternativo}">
                                                 </div>
                                                 <div class="col-md-6 text-start">
-                                                    <p class="h5" th:if="${producto.conDescuento}">
+                                                    <p class="h5"
+                                                        th:if="${producto.conDescuento and producto.precio < producto.precioOriginal}">
                                                         <span class="text-danger text-decoration-line-through me-2"
-                                                              th:text="'Precio: ' + ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></span>
+                                                            th:text="'Precio: '+ ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></span>
                                                         <span class="text-success fw-bold"
-                                                              th:text="'Nuevo: ' + ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
+                                                            th:text="'Ahora: '+ ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
                                                     </p>
 
-                                                    <!-- Si no tiene descuento -->
-                                                    <p class="h5" th:unless="${producto.conDescuento}"
-                                                       th:text="' Precio: '  +  ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'">
+                                                    <!-- Mostrar solo el precio original si no hay descuento real -->
+                                                    <p class="h5"
+                                                        th:unless="${producto.conDescuento and producto.precio < producto.precioOriginal}"
+                                                        th:text="${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'">
                                                     </p>
                                                     <p class="text-muted"
                                                         th:text="'Fecha de creación: ' + ${#temporals.format(producto.fecha, 'dd/MM/yyyy')}">
@@ -230,16 +232,18 @@
                                                 th:alt="${producto.txtAlternativo}">
                                         </div>
                                         <div class="col-md-6 text-start">
-                                            <p class="h5" th:if="${producto.conDescuento}">
-                                                        <span class="text-danger text-decoration-line-through me-2"
-                                                              th:text="'Precio: ' + ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></span>
+                                            <p class="h5"
+                                                th:if="${producto.conDescuento and producto.precio < producto.precioOriginal}">
+                                                <span class="text-danger text-decoration-line-through me-2"
+                                                    th:text="'Precio: '+ ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></span>
                                                 <span class="text-success fw-bold"
-                                                      th:text="'Nuevo: ' + ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
+                                                    th:text="'Ahora: '+ ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
                                             </p>
 
-                                            <!-- Si no tiene descuento -->
-                                            <p class="h5" th:unless="${producto.conDescuento}"
-                                               th:text="' Precio: '  +  ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'">
+                                            <!-- Mostrar solo el precio original si no hay descuento real -->
+                                            <p class="h5"
+                                                th:unless="${producto.conDescuento and producto.precio < producto.precioOriginal}"
+                                                th:text="${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'">
                                             </p>
                                             <p class="text-muted"
                                                 th:text="'Fecha de creación: ' + ${#temporals.format(producto.fecha, 'dd/MM/yyyy')}">
@@ -281,7 +285,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">Iniciar sesión</button>
                                 <button class=" btn btn-primary " type="button" data-bs-toggle="modal"
-                                        data-bs-target="#myModal">
+                                    data-bs-target="#myModal">
                                     Crear cuenta
                                 </button>
                             </form>
@@ -312,7 +316,8 @@
 
                                         <div class="mb-1 col-12 col-md-7">
                                             <label for="surname" class="form-label">Apellidos:</label>
-                                            <input type="text" class="form-control p-2" id="surname" required name="surname">
+                                            <input type="text" class="form-control p-2" id="surname" required
+                                                name="surname">
                                         </div>
                                     </div>
 
@@ -320,8 +325,7 @@
                                         <div class="mb-1 col-12 col-md-8">
                                             <label for="home" class="form-label">Domicilio:</label>
                                             <input type="text" class="form-control p-2" id="home" required
-                                                   placeholder="Nº XXX C/ XXX"
-                                                   name="home">
+                                                placeholder="Nº XXX C/ XXX" name="home">
                                         </div>
 
                                         <div class="mb-1 col-12 col-md-4">
@@ -334,8 +338,7 @@
                                         <div class="mb-1 col-12">
                                             <label for="email" class="form-label">Email:</label>
                                             <input type="email" class="form-control p-2" required id="email"
-                                                   placeholder="correo@email.com"
-                                                   name="email">
+                                                placeholder="correo@email.com" name="email">
                                         </div>
                                     </div>
 
@@ -343,15 +346,13 @@
                                         <div class="mb-1 col-12 col-md-6">
                                             <label for="pwd" class="form-label">Contraseña:</label>
                                             <input type="password" class="form-control p-2" id="pwd" required
-                                                   placeholder="************"
-                                                   name="pswd">
+                                                placeholder="************" name="pswd">
                                         </div>
 
                                         <div class="mb-1 col-12 col-md-6">
                                             <label for="pwd2" class="form-label">Repetir contraseña:</label>
                                             <input type="password" class="form-control p-2" id="pwd2" required
-                                                   placeholder="************"
-                                                   name="pswd2">
+                                                placeholder="************" name="pswd2">
                                         </div>
                                     </div>
 
@@ -360,14 +361,16 @@
 
                                         <div class="form-check mb-1 col-12 col-md-3">
                                             <label class="form-check-label" for="hombre">
-                                                <input class="form-check-input" id="hombre" type="radio" name="sex" value="H">
+                                                <input class="form-check-input" id="hombre" type="radio" name="sex"
+                                                    value="H">
                                                 Hombre
                                             </label>
                                         </div>
 
                                         <div class="form-check mb-1 col-12 col-md-3">
                                             <label class="form-check-label" for="mujer">
-                                                <input class="form-check-input" type="radio" id="mujer" name="sex" value="M">
+                                                <input class="form-check-input" type="radio" id="mujer" name="sex"
+                                                    value="M">
                                                 Mujer
                                             </label>
                                         </div>
@@ -375,7 +378,7 @@
                                         <div class="form-check mb-1 col-12 col-md-5">
                                             <label class="form-check-label" for="noindicado">
                                                 <input class="form-check-input" type="radio" id="noindicado" name="sex"
-                                                       value="N"> No especificado
+                                                    value="N"> No especificado
                                             </label>
                                         </div>
                                     </div>
@@ -384,7 +387,7 @@
                                         <div class="my-1">
                                             <label for="comment">Observaciones:</label>
                                             <textarea class="form-control" rows="2" id="comment" name="text"
-                                                      placeholder="Escriba aquí..."></textarea>
+                                                placeholder="Escriba aquí..."></textarea>
                                         </div>
                                     </div>
 
@@ -396,7 +399,8 @@
                                         </div>
 
                                         <div class="col-6">
-                                            <button type=" submit" class=" btn btn-primary " data-bs-dismiss="modal">Crear
+                                            <button type=" submit" class=" btn btn-primary "
+                                                data-bs-dismiss="modal">Crear
                                                 cuenta
                                             </button>
                                         </div>

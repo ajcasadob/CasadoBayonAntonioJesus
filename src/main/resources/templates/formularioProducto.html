@@ -142,7 +142,7 @@
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="precio" class="form-label">Precio:</label>
-                    <input type="number" id="precio" step="0.01" th:field="*{precioOriginal}" class="form-control" required/>
+                    <input type="number" min="1" id="precio" step="0.01" th:field="*{precioOriginal}" class="form-control" required/>
                     <input type="hidden" th:field="*{precioOriginal}" />
 
                 </div>
@@ -155,13 +155,13 @@
                 <div class="col-md-4">
                     <label for="popularidad" class="form-label">Popularidad:</label>
                     <input type="number" id="popularidad" th:field="*{popularidad}" class="form-control" max="10"
-                           min="0" step="1"/>
+                           min="0" required step="1"/>
                 </div>
 
 
                 <div class="col-md-4">
                     <label for="fecha" class="form-label">Fecha:</label>
-                    <input type="date" id="fecha" th:field="*{fecha}" class="form-control"/>
+                    <input type="date" id="fecha" required th:field="*{fecha}" class="form-control"/>
                 </div>
             </div>
 
@@ -171,7 +171,7 @@
             </div>
             <div class="mb-3">
                 <label for="txtAlternativo" class="form-label">Texto alternativo:</label>
-                <input type="text" id="txtAlternativo" th:field="*{txtAlternativo}" class="form-control"/>
+                <input type="text" id="txtAlternativo" required th:field="*{txtAlternativo}" class="form-control"/>
             </div>
 
             <div class="text-center">

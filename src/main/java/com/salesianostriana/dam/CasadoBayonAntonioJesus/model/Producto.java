@@ -30,6 +30,7 @@ public class Producto {
 
     private double precio;
     private double precioOriginal;
+    private boolean conDescuento;
 
     @Enumerated(EnumType.STRING)
     private TipoProducto tipoProducto;

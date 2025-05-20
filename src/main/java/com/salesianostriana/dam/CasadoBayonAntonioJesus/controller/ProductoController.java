@@ -91,6 +91,7 @@ public class ProductoController {
             @ModelAttribute Producto producto,
             BindingResult result,
             @RequestParam("idCarta") Long idCarta,
+            @RequestParam(name = "descuento", required = false) Double descuento,
             Model model) {
 
         if (result.hasErrors()) {
@@ -98,14 +99,10 @@ public class ProductoController {
             return "formularioProducto";
         }
 
-        Carta carta = cartaService.findCartaById(idCarta);
-
-
-        producto.addToCarta(carta);
-        productoService.savedProduct(producto);
-
+        productoService.guardarOActualizarProducto(producto, idCarta, descuento);
         return "redirect:/productos/nuevo";
     }
+
 
     @GetMapping("/productos/editar/{idProducto}")
     public String mostrarFormularioConProductoCargado(Model model, @PathVariable Long idProducto) {
@@ -119,6 +116,7 @@ public class ProductoController {
             @ModelAttribute Producto producto,
             BindingResult result,
             @RequestParam("idCarta") Long idCarta,
+            @RequestParam(name = "descuento", required = false) Double descuento,
             Model model) {
 
         if (result.hasErrors()) {
@@ -126,13 +124,10 @@ public class ProductoController {
             return "formularioProducto";
         }
 
-        Carta carta = cartaService.findCartaById(idCarta);
-        producto.addToCarta(carta);
-
-        productoService.editProduct(producto);
-
-        return "redirect:/productos";
+        productoService.guardarOActualizarProducto(producto, idCarta, descuento);
+        return "redirect:/admin";
     }
+
 
     @GetMapping("/productos")
     public String listarProductos(Model model) {
@@ -162,12 +157,28 @@ public class ProductoController {
         return "redirect:/admin";
     }
 
+
     @GetMapping("/productos/descuento")
-    public String mostrarProductosConDescuento(Model model) {
-        List<Producto> productosConDescuento = productoService.obtenerProductosConDescuento();
-        model.addAttribute("productos", productosConDescuento);
+    public String verProductosConDescuento(Model model) {
+        model.addAttribute("productos", productoService.obtenerProductosConDescuento());
         return "productosConDescuento";
     }
+
+    @PostMapping("/descuento")
+    public String aplicarDescuento(
+            @RequestParam Long productoId,
+            @RequestParam double porcentajeDescuento) {
+
+        productoService.aplicarDescuento(productoId, porcentajeDescuento);
+        return "redirect:/admin";
+    }
+
+    @PostMapping("/quitar-descuento")
+    public String quitarDescuento(@RequestParam Long productoId) {
+        productoService.quitarDescuento(productoId);
+        return "redirect:/admin";
+    }
+
 
 
     @GetMapping("/menu2/tipo")

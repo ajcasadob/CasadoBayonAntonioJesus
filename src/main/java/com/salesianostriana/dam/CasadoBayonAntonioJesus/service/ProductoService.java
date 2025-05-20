@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.CasadoBayonAntonioJesus.service;
 
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.controller.ProductoController;
+import com.salesianostriana.dam.CasadoBayonAntonioJesus.model.Carta;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.model.Producto;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.repository.ProductoRepository;
 import com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto;
@@ -19,13 +20,20 @@ public class ProductoService {
     @Autowired
     private  ProductoRepository productoRepository;
 
-    //Buscar un producto
-    public List<Producto> buscarPorNombre(String nombre) {
+    @Autowired
+    private CartaService cartaService;
 
-        return productoRepository.findByNombreContainingIgnoreCase(nombre).stream().toList();
+    //Buscar un producto si no escibimos nada no busca, asi evitamos busquedas vacias.
+    public List<Producto> buscarPorNombre(String nombre) {
+        if (nombre == null || nombre.trim().isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        return productoRepository.findByNombreContainingIgnoreCase(nombre.trim());
     }
 
-    //GET ALL
+
+    //Obtener todos los productos
     public List<Producto> obtenerTodos() {
         return productoRepository.findAll();
     }
@@ -44,26 +52,40 @@ public class ProductoService {
                 .orElseThrow(() -> new EntityNotFoundException("Producto no encontrado con ID: " + id));
     }
 
-    //Guardar un producto
-    public void savedProduct(Producto producto) {
+    //Guardar y editar un produdcto
+
+    public void guardarOActualizarProducto(Producto producto, Long idCarta, Double descuento) {
+        Carta carta = cartaService.findCartaById(idCarta);
+        producto.addToCarta(carta);
+
+
+        if (descuento == null || descuento <= 0) {
+            producto.setConDescuento(false);
+
+
+            if (producto.getId() == null) {
+                producto.setPrecio(producto.getPrecioOriginal());
+            }
+        } else {
+
+            double original = producto.getPrecioOriginal() != 0 ? producto.getPrecioOriginal() : producto.getPrecio();
+            producto.setPrecioOriginal(original);
+            double precioConDescuento = original * (1 - descuento / 100);
+            producto.setPrecio(precioConDescuento);
+            producto.setConDescuento(true);
+        }
 
         productoRepository.save(producto);
-
     }
+
+
 
     //Obtener los primeros cuatro productos
     public List<Producto> obtenerPrimerosCuatroProductos() {
         return productoRepository.findAll().stream().limit(4).toList();
     }
 
-    //editar producto
-    public void editProduct(Producto producto) {
-        Producto productoExistente = findById(producto.getId());
-
-
-        productoRepository.save(productoExistente);
-    }
-
+    //Eliminar
     public void deleteById(Long id) {
         productoRepository.deleteById(id);
     }
@@ -93,18 +115,40 @@ public class ProductoService {
         return productoRepository.findTop2ByOrderByFechaDesc();
     }
 
-    //Obtener los productos con popularidad menor a 5 y hacer un descuento
-    public List<Producto> obtenerProductosConDescuento() {
-        double porcentajeDescuento = 15;
-        double divisor = 100;
-        return productoRepository.findByPopularidadMenor().stream()
-                .map(p -> {
-                    p.setPrecio(p.getPrecio() * ((divisor - porcentajeDescuento) / divisor));
-
-                    return p;
-                })
-                .collect(Collectors.toList());
+    //Quitar descuento
+    public void quitarDescuento(Long productoId) {
+        Producto producto = findById(productoId);
+        producto.setPrecio(0);
+        producto.setConDescuento(false);
+        productoRepository.save(producto);
     }
+
+
+
+    //Aplicar un descuento
+    public void aplicarDescuento(Long productoId, double porcentajeDescuento) {
+        Producto producto = findById(productoId);
+
+        double precioOriginal = producto.getPrecioOriginal();
+
+
+        if (precioOriginal > 0) {
+            double precioConDescuento = precioOriginal * (1 - porcentajeDescuento / 100);
+            producto.setPrecio(precioConDescuento);
+            producto.setConDescuento(true);
+            productoRepository.save(producto);
+        }
+    }
+    //Obtener los productos con descuento
+    public List<Producto> obtenerProductosConDescuento() {
+        return productoRepository.findAll()
+                .stream()
+                .filter(Producto::isConDescuento)
+                .toList();
+    }
+
+
+
 
 
     //Obtener los productos ordenados por precio de mayor a menor

@@ -71,7 +71,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" th:href="@{/productos/descuento}"><img
                                 th:src="@{/svg/one-hamburguer-svgrepo-com(1).svg}" alt="Descripción del SVG"
-                                class="pb-1" width="16px"> Descuentos</a>
+                                class="pb-1" width="16px"> Promociones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" th:href="@{/#galeria}"><i class="bi bi-image"></i> Galería</a>
@@ -133,6 +133,151 @@
 
         <div th:if="${productos.isEmpty()}" class="alert alert-warning text-center">
             No se encontraron resultados para: "<span th:text="${terminoBusqueda}"></span>"
+        </div>
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="#" action="#">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                            <button class=" btn btn-primary " type="button" data-bs-toggle="modal"
+                                    data-bs-target="#myModal">
+                                Crear cuenta
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-light">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title">Creación de cuenta</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <form action="#" method="#" class="mt-0">
+
+                            <div class="container-fluid">
+
+                                <div class="row">
+                                    <div class="mb-1 col-12 col-md-5">
+                                        <label for="name" class="form-label">Nombre:</label>
+                                        <input type="text" class="form-control p-2" required id="name" name="name">
+                                    </div>
+
+                                    <div class="mb-1 col-12 col-md-7">
+                                        <label for="surname" class="form-label">Apellidos:</label>
+                                        <input type="text" class="form-control p-2" id="surname" required name="surname">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="mb-1 col-12 col-md-8">
+                                        <label for="home" class="form-label">Domicilio:</label>
+                                        <input type="text" class="form-control p-2" id="home" required
+                                               placeholder="Nº XXX C/ XXX"
+                                               name="home">
+                                    </div>
+
+                                    <div class="mb-1 col-12 col-md-4">
+                                        <label for="city" class="form-label">Localidad:</label>
+                                        <input type="text" class="form-control p-2" id="city" name="city">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="mb-1 col-12">
+                                        <label for="email" class="form-label">Email:</label>
+                                        <input type="email" class="form-control p-2" required id="email"
+                                               placeholder="correo@email.com"
+                                               name="email">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="mb-1 col-12 col-md-6">
+                                        <label for="pwd" class="form-label">Contraseña:</label>
+                                        <input type="password" class="form-control p-2" id="pwd" required
+                                               placeholder="************"
+                                               name="pswd">
+                                    </div>
+
+                                    <div class="mb-1 col-12 col-md-6">
+                                        <label for="pwd2" class="form-label">Repetir contraseña:</label>
+                                        <input type="password" class="form-control p-2" id="pwd2" required
+                                               placeholder="************"
+                                               name="pswd2">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <label class="form-label">Sexo:</label>
+
+                                    <div class="form-check mb-1 col-12 col-md-3">
+                                        <label class="form-check-label" for="hombre">
+                                            <input class="form-check-input" id="hombre" type="radio" name="sex" value="H">
+                                            Hombre
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check mb-1 col-12 col-md-3">
+                                        <label class="form-check-label" for="mujer">
+                                            <input class="form-check-input" type="radio" id="mujer" name="sex" value="M">
+                                            Mujer
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check mb-1 col-12 col-md-5">
+                                        <label class="form-check-label" for="noindicado">
+                                            <input class="form-check-input" type="radio" id="noindicado" name="sex"
+                                                   value="N"> No especificado
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="my-1">
+                                        <label for="comment">Observaciones:</label>
+                                        <textarea class="form-control" rows="2" id="comment" name="text"
+                                                  placeholder="Escriba aquí..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="reset" class=" btn btn-primary ">Limpiar
+                                            formulario
+                                        </button>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <button type=" submit" class=" btn btn-primary " data-bs-dismiss="modal">Crear
+                                            cuenta
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

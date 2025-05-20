@@ -109,19 +109,25 @@ public class ProductoController {
 
     @GetMapping("/productos/editar/{idProducto}")
     public String mostrarFormularioConProductoCargado(Model model, @PathVariable Long idProducto) {
-
         model.addAttribute("producto", productoService.findById(idProducto));
-
+        model.addAttribute("cartas", cartaService.findAllCartas());
         return "formularioProducto";
     }
 
     @PostMapping("/productos/editar/{idProducto}")
-    public String editarProducto(@ModelAttribute Producto producto, BindingResult result, Model model) {
+    public String editarProducto(
+            @ModelAttribute Producto producto,
+            BindingResult result,
+            @RequestParam("idCarta") Long idCarta,
+            Model model) {
 
         if (result.hasErrors()) {
-            model.addAttribute("productos", productoService.obtenerTodos());
+            model.addAttribute("cartas", cartaService.findAllCartas());
             return "formularioProducto";
         }
+
+        Carta carta = cartaService.findCartaById(idCarta);
+        producto.addToCarta(carta);
 
         productoService.editProduct(producto);
 

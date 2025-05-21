@@ -172,6 +172,11 @@ public class ProductoService {
         return productoRepository.findByFechaDesc();
     }
 
+    //Obtener los productos ordenados por precio de descuento de menor a mayor
+    public List<Producto> obtenerProductosOrdenadosPorPrecioAsc2() {
+        return productoRepository.findByPrecioAsc2();
+    }
+
     //Obtener los productos ordenados por popularidad de menor a mayor
     public List<Producto> obtenerProductosOrdenadosPorPopularidadDesc() {
         return productoRepository.findByPopularidadDesc();

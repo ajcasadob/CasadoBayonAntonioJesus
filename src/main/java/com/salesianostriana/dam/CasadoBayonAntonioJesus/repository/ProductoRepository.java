@@ -38,5 +38,6 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     @Query("SELECT p FROM Producto p ORDER BY p.popularidad DESC")
     List<Producto> findByPopularidadDesc();
 
-
+    @Query("SELECT  p FROM Producto p ORDER BY p.precio ASC")
+    List<Producto> findByPrecioAsc2();
 }

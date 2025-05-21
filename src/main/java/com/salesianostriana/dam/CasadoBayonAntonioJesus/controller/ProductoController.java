@@ -59,6 +59,9 @@ public class ProductoController {
             case "precioDesc":
                 model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorPrecioDesc());
                 break;
+            case "precioAsc2":
+                model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorPrecioAsc2());
+                break;
             case "nombreAsc":
                 model.addAttribute("productos", productoService.obtenerProductosOrdenadosPorNombreAsc());
                 break;

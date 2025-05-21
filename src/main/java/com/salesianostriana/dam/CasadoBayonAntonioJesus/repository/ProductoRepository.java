@@ -22,10 +22,10 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     @Query("SELECT p FROM Producto p WHERE p.popularidad < 5 ")
     List<Producto> findByPopularidadMenor();
 
-    @Query("SELECT p FROM Producto p ORDER BY p.precio DESC")
+    @Query("SELECT p FROM Producto p ORDER BY p.precioOriginal DESC")
     List<Producto> findByPrecioDesc();
 
-    @Query("SELECT  p FROM Producto p ORDER BY p.precio ASC")
+    @Query("SELECT  p FROM Producto p ORDER BY p.precioOriginal ASC")
     List<Producto> findByPrecioAsc();
 
     @Query("SELECT p FROM Producto p ORDER BY p.nombre ASC")

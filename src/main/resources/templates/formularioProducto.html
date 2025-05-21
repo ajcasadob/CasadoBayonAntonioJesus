@@ -104,8 +104,9 @@
         <div class="container form-container">
 
             <h3 class="text-center my-4">Añadir Nuevo Producto</h3>
+            <!-- Fragmento ajustado del form de producto -->
             <form th:action="@{/productos/nuevo}" th:object="${producto}" method="post"
-                class="bg-light p-4 rounded shadow">
+                  class="bg-light p-4 rounded shadow">
 
                 <div class="row mb-3">
                     <div class="col-md-6">
@@ -117,67 +118,60 @@
                         <label for="tipoProducto" class="form-label">Tipo:</label>
                         <select id="tipoProducto" th:field="*{tipoProducto}" class="form-select" required>
                             <option value="" disabled selected>Seleccione un tipo de producto</option>
-                            <option
-                                th:each="tipo : ${T(com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto).values()}"
-                                th:value="${tipo}" th:text="${tipo}"></option>
+                            <option th:each="tipo : ${T(com.salesianostriana.dam.CasadoBayonAntonioJesus.tipos.TipoProducto).values()}"
+                                    th:value="${tipo}" th:text="${tipo}"></option>
                         </select>
                     </div>
                 </div>
+
                 <div class="mb-3">
                     <label for="carta" class="form-label">Carta:</label>
                     <select id="carta" name="idCarta" class="form-select" required>
                         <option value="" disabled selected>Selecciona una carta</option>
-                        <option th:each="c : ${cartas}" th:value="${c.idCarta}" th:text="${'Carta ' + c.idCarta}">
-                        </option>
+                        <option th:each="c : ${cartas}" th:value="${c.idCarta}" th:text="${'Carta ' + c.idCarta}"></option>
                     </select>
                 </div>
 
                 <div class="mb-3">
                     <label for="descripcion" class="form-label">Descripción:</label>
-                    <textarea id="descripcion" th:field="*{descripcion}" class="form-control" rows="3"
-                        required></textarea>
+                    <textarea id="descripcion" th:field="*{descripcion}" class="form-control" rows="3" required></textarea>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <label for="precio" class="form-label">Precio:</label>
-                        <input type="number" min="1" id="precio" step="0.01" th:field="*{precioOriginal}"
-                            class="form-control" required />
-                        <input type="hidden" th:field="*{precioOriginal}" />
-
+                        <input type="number" id="precio" min="1" step="0.01" th:field="*{precioOriginal}" class="form-control" required />
                     </div>
                     <div class="col-md-4">
                         <label for="descuento" class="form-label">Descuento (%):</label>
-                        <input type="number" step="0.01" min="0" max="100" id="descuento" name="descuento"
-                            class="form-control" />
+                        <input type="number" id="descuento" name="descuento" min="0" max="100" step="0.01" class="form-control" />
                     </div>
-
                     <div class="col-md-4">
                         <label for="popularidad" class="form-label">Popularidad:</label>
-                        <input type="number" id="popularidad" th:field="*{popularidad}" class="form-control" max="10"
-                            min="0" required step="1" />
+                        <input type="number" id="popularidad" th:field="*{popularidad}" min="0" max="10" step="1" class="form-control" required />
                     </div>
+                </div>
 
-
-                    <div class="col-md-4">
-                        <label for="fecha" class="form-label">Fecha:</label>
-                        <input type="date" id="fecha" required th:field="*{fecha}" class="form-control" />
-                    </div>
+                <div class="mb-3">
+                    <label for="fecha" class="form-label">Fecha:</label>
+                    <input type="date" id="fecha" th:field="*{fecha}" class="form-control" required />
                 </div>
 
                 <div class="mb-3">
                     <label for="url" class="form-label">URL Imagen:</label>
                     <input type="text" id="url" th:field="*{url}" class="form-control" />
                 </div>
+
                 <div class="mb-3">
                     <label for="txtAlternativo" class="form-label">Texto alternativo:</label>
-                    <input type="text" id="txtAlternativo" required th:field="*{txtAlternativo}" class="form-control" />
+                    <input type="text" id="txtAlternativo" th:field="*{txtAlternativo}" class="form-control" required />
                 </div>
 
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
             </form>
+
         </div>
         <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
             <div class="modal-dialog">

@@ -119,32 +119,33 @@
                 </div>
 
                 <div th:each="producto : ${productos}" class="col-md-4 mb-4">
-
                     <div class="card h-100 position-relative">
                         <span class="badge badge-promocion">Promoción</span>
                         <img th:src="${producto.url}" class="card-img-top" th:alt="${producto.txtAlternativo}">
                         <div class="card-body">
                             <h5 class="card-title" th:text="${producto.nombre}"></h5>
                             <p class="card-text" th:text="${producto.descripcion}"></p>
-                            <p class="card-text">
 
-                            <p class="h5"
-                                th:if="${producto.conDescuento and producto.precio < producto.precioOriginal}">
-                                <span class="text-danger text-decoration-line-through me-2"
-                                    th:text="'Precio: '+ ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></span>
-                                <span class="text-success fw-bold"
-                                    th:text="'Ahora: '+ ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
-                            </p>
+                            <!-- Precio -->
+                            <div>
+                                <p class="h5"
+                                   th:if="${producto.conDescuento and producto.precio < producto.precioOriginal}">
+                        <span class="text-danger text-decoration-line-through me-2"
+                              th:text="'Precio: ' + ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></span>
+                                    <span class="text-success fw-bold"
+                                          th:text="'Ahora: ' + ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
+                                </p>
 
-                            <!-- Mostrar solo el precio original si no hay descuento real -->
-                            <p class="h5"
-                                th:unless="${producto.conDescuento and producto.precio < producto.precioOriginal}"
-                                th:text="${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></p>
-
+                                <p class="h5"
+                                   th:unless="${producto.conDescuento and producto.precio < producto.precioOriginal}"
+                                   th:text="${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+            </div>
+
+            <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -292,7 +293,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
+
         </section>
 
         <footer th:replace="~{footer :: pie}" class="text-white py-5"></footer>

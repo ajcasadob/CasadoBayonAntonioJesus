@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Menu</title>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="hamburguesería">
+    <title>Menu</title>
     <link rel="icon" type="image/jpg" href="https://i.postimg.cc/WzQmp01V/magic.jpg">
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -16,14 +15,12 @@
     <style>
         body {
             background-image: url([[@{/img/pattern.jpg}]]);
-            /* Tu imagen de fondo */
             background-repeat: repeat;
             background-size: auto;
         }
 
         .fondo-oscurecido {
             background-color: rgba(0, 0, 0, 0.85);
-
         }
 
         .img-50 {
@@ -35,79 +32,79 @@
 </head>
 
 <body>
-    <section th:fragment="catalogo" id="menu" class="container py-5">
-        <h2 class="text-center">Menú</h2>
-        <h4 class="text-start">Productos mejor valorados</h4>
-        <div class="row text-center">
-            <div th:each="producto : ${productos1}" class="col-md-4 mb-4">
-                <div class="card h-100">
+<section th:fragment="catalogo" id="menu" class="container py-5">
+    <h2 class="text-center">Menú</h2>
+    <h4 class="text-start">Productos mejor valorados</h4>
+    <div class="row text-center">
+        <div th:each="producto : ${productos1}" class="col-md-4 mb-4">
+            <div class="card h-100">
                     <span class="badge bg-danger position-absolute top-0 start-0 m-2"
-                        th:if="${producto.conDescuento}">Promoción</span>
-                    <img th:src="${producto.url}" class="card-img-top" th:alt="${producto.txtAlternativo}">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${producto.nombre}"></h5>
+                          th:if="${producto.conDescuento}">Promoción</span>
+                <img th:src="${producto.url}" class="card-img-top" th:alt="${producto.txtAlternativo}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${producto.nombre}"></h5>
 
-                        <button class="btn btn-primary" data-bs-toggle="modal"
+                    <button class="btn btn-primary" data-bs-toggle="modal"
                             th:data-bs-target="'#modal-' + ${producto.id}">
-                            Ver Detalles
-                        </button>
-                    </div>
+                        Ver Detalles
+                    </button>
                 </div>
+            </div>
 
-                <!-- Modal para cada producto -->
-                <div class="modal fade" th:id="'modal-' + ${producto.id}" tabindex="-1"
-                    th:aria-labelledby="'modal-label-' + ${producto.id}" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" th:id="'modal-label-' + ${producto.id}"
-                                    th:text="${producto.nombre}"></h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
+            <!-- Modal para cada producto -->
+            <div class="modal fade" th:id="'modal-' + ${producto.id}" tabindex="-1"
+                 th:aria-labelledby="'modal-label-' + ${producto.id}" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" th:id="'modal-label-' + ${producto.id}"
+                                th:text="${producto.nombre}"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
                                 <span class="badge bg-danger position-absolute top-0 start-0 m-2"
-                                    th:if="${producto.conDescuento}">Promoción</span>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img th:src="${producto.url}" class="img-fluid rounded mb-3"
-                                            th:alt="${producto.txtAlternativo}">
-                                    </div>
-                                    <div class="col-md-6 text-start">
-                                        <<p class="h5"
-                                            th:if="${producto.conDescuento and producto.precio < producto.precioOriginal}">
-                                            <span class="text-danger text-decoration-line-through me-2"
-                                                th:text="'Precio: '+ ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></span>
+                                      th:if="${producto.conDescuento}">Promoción</span>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img th:src="${producto.url}" class="img-fluid rounded mb-3"
+                                         th:alt="${producto.txtAlternativo}">
+                                </div>
+                                <div class="col-md-6 text-start">
+                                    <div>
+                                        <p class="h5"
+                                           th:if="${producto.conDescuento and producto.precio < producto.precioOriginal}">
+                                                <span class="text-danger text-decoration-line-through me-2"
+                                                      th:text="'Precio: '+ ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></span>
                                             <span class="text-success fw-bold"
-                                                th:text="'Ahora: '+ ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
-                                            </p>
+                                                  th:text="'Ahora: '+ ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
+                                        </p>
 
-                                            <!-- Mostrar solo el precio original si no hay descuento real -->
-                                            <p class="h5"
-                                                th:unless="${producto.conDescuento and producto.precio < producto.precioOriginal}"
-                                                th:text="${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'">
-                                            </p>
-                                            <p class="text-muted"
-                                                th:text="'Fecha de creación: ' + ${#temporals.format(producto.fecha, 'dd/MM/yyyy')}">
-                                            </p>
-                                            <p class="text-muted" th:text="'Tipo: ' + ${producto.tipoProducto}"></p>
-                                            <p th:class="${producto.popularidad > 5 ? 'text-success' : 'text-warning'}"
-                                                th:text="'Popularidad: ' + ${producto.popularidad} + '/10'"></p>
-                                            <hr>
-                                            <h6>Descripción:</h6>
-                                            <p th:text="${producto.descripcion}"></p>
+                                        <p class="h5"
+                                           th:unless="${producto.conDescuento and producto.precio < producto.precioOriginal}"
+                                           th:text="'Precio: '+ ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'">
+                                        </p>
                                     </div>
+                                    <p class="text-muted"
+                                       th:text="'Fecha de creación: ' + ${#temporals.format(producto.fecha, 'dd/MM/yyyy')}">
+                                    </p>
+                                    <p class="text-muted" th:text="'Tipo: ' + ${producto.tipoProducto}"></p>
+                                    <p th:class="${producto.popularidad > 5 ? 'text-success' : 'text-warning'}"
+                                       th:text="'Popularidad: ' + ${producto.popularidad} + '/10'"></p>
+                                    <hr>
+                                    <h6>Descripción:</h6>
+                                    <p th:text="${producto.descripcion}"></p>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 </body>
 
 </html>

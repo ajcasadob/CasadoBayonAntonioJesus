@@ -103,7 +103,7 @@
             </div>
         </nav>
 
-        <!-- Mostar resultado -->
+
         <section id="resultados-busqueda" class="container py-4" th:if="${productos != null}">
 
             <div th:if="${!productos.isEmpty()}">
@@ -132,7 +132,7 @@
                                         th:text="'Ahora: '+ ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
                                 </p>
 
-                                <!-- Mostrar solo el precio original si no hay descuento real -->
+
                                 <p class="h5"
                                     th:unless="${producto.conDescuento and producto.precio < producto.precioOriginal}"
                                     th:text="'Precio: ' + ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'"></p>

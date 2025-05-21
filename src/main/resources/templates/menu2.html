@@ -171,7 +171,7 @@
                                                             th:text="'Ahora: '+ ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
                                                     </p>
 
-                                                    <!-- Mostrar solo el precio original si no hay descuento real -->
+
                                                     <p class="h5"
                                                         th:unless="${producto.conDescuento and producto.precio < producto.precioOriginal}"
                                                         th:text="'Precio: '+ ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'">
@@ -244,7 +244,7 @@
                                                     th:text="'Ahora: '+ ${#numbers.formatDecimal(producto.precio, 1, 2)} + '€'"></span>
                                             </p>
 
-                                            <!-- Mostrar solo el precio original si no hay descuento real -->
+
                                             <p class="h5"
                                                 th:unless="${producto.conDescuento and producto.precio < producto.precioOriginal}"
                                                 th:text="'Precio: ' + ${#numbers.formatDecimal(producto.precioOriginal, 1, 2)} + '€'">

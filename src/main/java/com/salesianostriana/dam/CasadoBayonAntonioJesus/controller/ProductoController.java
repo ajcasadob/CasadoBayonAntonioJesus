@@ -37,6 +37,7 @@ public class ProductoController {
 
         model.addAttribute("productos1", productoService.obtenerMejorValorados());
         model.addAttribute("productosNovedades", productoService.obtenerUltimosDosProductos());
+        model.addAttribute("productosNovedades", productoService.obtenerProductosNuevos());
 
         return "web";
     }
@@ -188,6 +189,9 @@ public class ProductoController {
         model.addAttribute("mostrarPorTipo", true);
         return "menu2";
     }
+
+
+
 
 
 }

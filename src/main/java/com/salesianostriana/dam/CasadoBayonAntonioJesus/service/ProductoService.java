@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -180,6 +181,14 @@ public class ProductoService {
     public Map<TipoProducto, List<Producto>> listarProductosPorTipo() {
         return productoRepository.findAll().stream()
                 .collect(Collectors.groupingBy(Producto::getTipoProducto));
+    }
+
+    //Obtener los productos nuevos (última semana)
+    public List<Producto> obtenerProductosNuevos() {
+        LocalDate haceUnaSemana = LocalDate.now().minusDays(7);
+        return productoRepository.findAll().stream()
+                .filter(p -> p.getFecha() != null && p.getFecha().isAfter(haceUnaSemana))
+                .toList();
     }
 
 

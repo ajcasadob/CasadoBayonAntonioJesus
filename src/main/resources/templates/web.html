@@ -112,11 +112,16 @@
             <div class="text-center ">
 
 
+
                 <!-- Sección de Noticias en portada -->
                 <div class="container mt-5 p-4 rounded">
-                    <h2>Novedades</h2>
+                    <h2 class="text-white">Novedades</h2>
                     <div class="row d-flex justify-content-between">
-                        <div th:each="producto : ${productosNovedades}" class="card text-white h-auto col-md-5">
+                        <div th:each="producto : ${productosNovedades}" class="card text-white h-auto col-md-5 position-relative">
+
+                            <!-- Etiqueta "Nuevo" -->
+                            <span class="badge bg-info text-dark position-absolute top-0 end-0 m-2">Nuevo</span>
+
                             <div class="card-body h-100 d-flex flex-column justify-content-between m-0 p-0 py-3">
                                 <h5 class="card-title" th:text="${producto.nombre}"></h5>
                                 <p class="card-text justify-self-top" th:text="${producto.descripcion}"></p>
